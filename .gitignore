@@ -1,0 +1,16 @@
+/cmake-build-debug/
+/cmake/
+/data_raw/
+/data/
+/venv/
+.idea/
+*.cmake
+*.bin
+build/
+testgit_track_rename
+__pycache__/
+third_party/cmake-3.20.2.tar.gz
+#third_party/c-ares/
+third_party/*
+/cpptest
+main.cc

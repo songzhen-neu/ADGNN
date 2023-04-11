@@ -1,0 +1,156 @@
+syntax = "proto3";
+
+//option java_multiple_files = true;
+//option java_package = "io.grpc.examples.prototest";
+//option java_outer_classname = "ProtoTest";
+//option objc_class_prefix = "PT";
+
+
+
+package dgnn_test;
+
+service DgnnProtoService{
+  rpc pullDataFromMasterGeneral(ContextMessage) returns (DataMessage){}
+  rpc initParameter(NetInfoMessage) returns (NullMessage){}
+  rpc barrier(NullMessage) returns(NullMessage){}
+  rpc workerPullEmb(EmbGradMessage) returns(EmbGradMessage){}
+  rpc setAndSendG(EmbGradMessage) returns(NullMessage){}
+  rpc sendAccuracy(AccuracyMessage) returns(AccuracyMessage){}
+  rpc freeMaster(NullMessage) returns(NullMessage){}
+  rpc server_PullParams(ParamGrad) returns(ParamGrad){}
+  rpc server_updateParam(ParamGrad) returns(NullMessage){}
+  rpc sendNodes2Wk(NodeMessage) returns(NullMessage){}
+  rpc workerPullRmtTrainFeat(EmbGradMessage) returns(EmbGradMessage){}
+  rpc sendInNodes2Wk(NodeMessage) returns(NullMessage){}
+  rpc pushEmbs(EmbGradMessage) returns(NullMessage){}
+  rpc aggregateNodes(NodeMessage) returns(NodeMessage){}
+  rpc setM(MMessageForAD) returns(MMessageForAD){}
+
+}
+
+message NullMessage{
+
+}
+
+message LayerNodeListMessage{
+  repeated NodeMessage layer_nodes=1;
+}
+
+
+
+message AccuracyMessage{
+  float val_acc=1;
+  float val_acc_entire=2;
+  float train_acc=3;
+  float train_acc_entire=4;
+  float test_acc=5;
+  float test_acc_entire=6;
+  float test_f1=7;
+  float val_f1=8;
+  float test_f1_entire=9;
+  float val_f1_entire=10;
+}
+
+
+message EmbGradMessage{
+  repeated int32 nodes=1;
+  int32 layerId=2;
+  int32 workerId=3;
+  string status=4;
+  int32 epoch=5;
+  int32 featsize=6;
+  int32 nodesize=7;
+  repeated float embs=8;
+  string graph_mode=9;
+}
+
+
+
+message ContextMessage{
+  int32 workerId = 1;
+  repeated string address = 2;
+  int32 workerNum = 3;
+  PartitionMessage partition = 4;
+  message PartitionMessage{
+    int32 dataNum = 1;
+    int32 workerNum = 2;
+    string dataPath = 3;
+    int32 featureDim = 4;
+    int32 classNum = 5;
+    string partitionMethod=6;
+    int32 edgeNum=7;
+  }
+}
+
+message NetInfoMessage{
+  int32 wid = 1;
+  int32 featureDim = 2;
+  repeated int32 hiddenDim = 3;
+  int32 classDim = 4;
+  int32 workerNum=5;
+  int32 serverNum=6;
+  repeated ParamGrad params=7;
+}
+
+message ParamGrad{
+    string id=1;
+    int32 wid=2;
+    int32 sid=3;
+    float lr=4;
+    repeated double elems=5;
+}
+
+message IntIntPair{
+  int32 key=1;
+  int32 value=2;
+}
+
+message DataMessage{
+  NodeMessage nodeList = 1;
+  AdjMessage adjList = 2;
+  FeatureMessage featureList = 3;
+  LabelMessage labelList = 4;
+  repeated NodeMessage nodesForEachWorker=5;
+  repeated IntIntPair degreeMap=6;
+
+
+  message FeatureMessage{
+    repeated FeatureItem features = 1;
+
+    message FeatureItem{
+      int32 vid = 1;
+      repeated float feature = 2;
+    }
+  }
+
+  message LabelMessage{
+    repeated LabelItem labels = 1;
+    message LabelItem{
+      int32 vid = 1;
+      int32 label = 2;
+    }
+  }
+
+  message AdjMessage{
+    repeated AdjItem adjs = 1;
+    message AdjItem{
+      int32 vid = 1;
+      repeated int32 neibors = 2;
+    }
+  }
+
+}
+
+message NodeMessage{
+  repeated int32 nodes = 1;
+  int32 layid=2;
+  int32 wid=3;
+}
+
+
+
+message MMessageForAD{
+  int32 wid=1;
+  int32 m=2;
+  int32 m_benefit=3;
+}
