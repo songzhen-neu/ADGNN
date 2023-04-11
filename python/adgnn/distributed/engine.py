@@ -23,8 +23,7 @@ class Engine:
             context.glContext.initCluster()
             context.glContext.setWorkerContext()
             self.dgnnClient = context.glContext.dgnnClient
-            # 初始化参数服务器模型，现在假设参数服务器就一台机器，先不进行参数划分
-            # 输入：节点属性维度、隐藏层维度、标签维度
+
             # assign parameter
 
             pu.assignParam(self.model)

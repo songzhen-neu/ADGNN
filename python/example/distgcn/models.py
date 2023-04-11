@@ -8,8 +8,8 @@ from adgnn.context import context
 
 
 class GCN(nn.Module):
-    def __init__(self, nfeat, nhid, nclass, dropout):  # 底层节点的参数，feature的个数；隐层节点个数；最终的分类数
-        super(GCN, self).__init__()  # super()._init_()在利用父类里的对象构造函数
+    def __init__(self, nfeat, nhid, nclass, dropout):
+        super(GCN, self).__init__()
         torch.manual_seed(1)
         self.layerNum = len(nhid) + 1
         self.dropout = dropout

@@ -26,7 +26,7 @@ void startPartition(int worker_num, string partitionMethod, int nodeNum, string 
     if (pwd[pwd.length() - 1] != '/') {
         pwd += '/';
     }
-    // 开始处理数据集
+
 //    string adjFile = pwd+"data_raw/cora/edges.txt";
 //    string featFile = pwd+"data_raw/cora/featsClass.txt";
 
@@ -47,7 +47,7 @@ void startPartition(int worker_num, string partitionMethod, int nodeNum, string 
     ifstream partitionInFile(partitionFile);
     string temp;
     if (!partitionInFile.is_open()) {
-        cout << "partitionInFile 未成功打开文件" << endl;
+        cout << "partitionInFile open unsuccessfully" << endl;
     }
     int count_worker = 0;
     while (getline(partitionInFile, temp)) {
@@ -72,7 +72,7 @@ void startPartition(int worker_num, string partitionMethod, int nodeNum, string 
     ifstream adjInFile(adjFile);
 
     if (!adjInFile.is_open()) {
-        cout << "adjInFile 未成功打开文件" << endl;
+        cout << "adjInFile open unsuccessfully" << endl;
     }
 
 
@@ -89,7 +89,7 @@ void startPartition(int worker_num, string partitionMethod, int nodeNum, string 
 
     int count = 0;
     int count_flag = 0;
-    cout << "正在处理邻接表数据" << endl;
+    cout << "processing data" << endl;
     while (getline(adjInFile, temp)) {
         vector<string> v;
         split(temp, v, "\t");
@@ -101,7 +101,7 @@ void startPartition(int worker_num, string partitionMethod, int nodeNum, string 
         adj_map[neibor_id].insert(vertex_id);
         count_flag++;
         if (count_flag % (10000) == 0) {
-            cout << "正在处理第" << count_flag << "个数据" << endl;
+            cout << "processing" << count_flag << "data" << endl;
         }
     }
     int edge_num = count_flag;
@@ -121,12 +121,12 @@ void startPartition(int worker_num, string partitionMethod, int nodeNum, string 
 
     ifstream featInFile(featFile);
     if (!featInFile.is_open()) {
-        cout << "未成功打开文件" << endl;
+        cout << "open unsuccessfully" << endl;
     }
 
     count = 0;
     count_flag = 0;
-    cout << "正在处理特征数据 " << endl;
+    cout << "processing feature " << endl;
 
     while (true) {
         getline(featInFile, temp);
@@ -146,7 +146,7 @@ void startPartition(int worker_num, string partitionMethod, int nodeNum, string 
         label_array[vertex_id] = atoi(v[feature_size + 1].c_str());
         count_flag++;
         if (count_flag % (10000) == 0) {
-            cout << "正在处理第" << count_flag << "个数据" << endl;
+            cout << "processing" << count_flag << "feature" << endl;
         }
     }
 
@@ -158,7 +158,7 @@ void startPartition(int worker_num, string partitionMethod, int nodeNum, string 
     // 邻接表：map<int, map<int,set>>
 
     cout << "adj_map size:" << adj_map.size() << endl;
-    cout << "边数:" << edge_num << endl;
+    cout << "edge number:" << edge_num << endl;
 
 
     for (int i = 0; i < worker_num; i++) {

@@ -28,10 +28,10 @@ class probComm:
 
     def probCommForLayer(self, expect_v_num, v2wk, adj_new, nei_set_list):
         adj = copy.deepcopy(adj_new)
-        adj_parmax = {}  # 记录每个顶点邻接点中概率最大的点
+        adj_parmax = {}
         work_id = context.glContext.config['id']
-        far_v_pro = {}  # 记录每个远程顶点出现的概率
-        v_count = Counter(nei_set_list)  # 记录每个邻接顶点出现的个数
+        far_v_pro = {}
+        v_count = Counter(nei_set_list)
         for i in list(v_count.keys()):
             if v2wk[i] == work_id:
                 del v_count[i]
@@ -40,7 +40,7 @@ class probComm:
 
         for key in v_count:
             far_v_pro[key] = (v_count[key] / nei_set_sum) * expect_v_num
-        for key in adj:  # 计算每个顶点邻接点中概率最大的点
+        for key in adj:
             v_max_par = 0
             v_max = -1
             for i in adj[key]:
@@ -50,14 +50,14 @@ class probComm:
                         v_max = i
             if v_max != -1:
                 adj_parmax[key] = v_max
-        v_not_choice = set()  # 按照概率记录不要的顶点
+        v_not_choice = set()
         for key in far_v_pro:
             ran_num = random.uniform(0, 1)
             if ran_num > far_v_pro[key]:
                 v_not_choice.add(key)
-        nei_set_new = set(nei_set_list)  # 在所有邻居节点中移除随机选择的顶点
+        nei_set_new = set(nei_set_list)
         nei_set_new = nei_set_new - v_not_choice
-        for key in adj_new:  # 逐个移除每个训练顶点邻接表中的随机选择的顶点（如果为空，在邻接表和邻居节点中加上概率最大的顶点）
+        for key in adj_new:
             adj_new[key] = adj_new[key] - v_not_choice
             if len(adj_new[key]) == 0:
                 adj_new[key].add(adj_parmax[key])

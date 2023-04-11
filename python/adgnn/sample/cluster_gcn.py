@@ -12,7 +12,7 @@ class CLUSTERGCN(Sample):
     cluster_number = None  # divide into cluster_number subgraphs
     lines=None
     def initAndReturnMetis(self,cluster_num):
-        self.cluster_number = cluster_num # 总图分区数
+        self.cluster_number = cluster_num
         fileName = ct.glContext.config['data_path']
         metisFileName = fileName + '/nodesPartition' + '.metis' + str(self.cluster_number) + '.txt'
         lines=[]
@@ -42,14 +42,14 @@ class CLUSTERGCN(Sample):
         fan_out = int(fan_out / workerNum)
         cluster_choice = []
         time_counter.start("metis-read")
-        while (len(cluster_choice) < fan_out):  # 在每台机器上随机选择fan_out/ workerNum个图分区编号
+        while (len(cluster_choice) < fan_out):
             x = random.randint(int(self.cluster_number / workerNum * worker_id ),
                                int(self.cluster_number / workerNum * (worker_id + 1)-1))
             if x not in cluster_choice:
                 cluster_choice.append(x)
 
         sub_node = set()
-        for line_id in cluster_choice:  # 利用编号访问文件，记录下当前机器中子图的顶点
+        for line_id in cluster_choice:
             # if self.lines[line_id].__contains__(0):
                 # print(line_id)
             sub_node = sub_node | self.lines[line_id]
@@ -65,22 +65,7 @@ class CLUSTERGCN(Sample):
         time_counter.end("transGraphCppToPython-sample")
         return context.glContext.graph_sample
 
-    # def sampleForLayer(self, i, layer_computer, adj, k, train_vertices, **kwargs):
-    #     sub_node_all = kwargs['sub_node_all']
-    #     # train_vertices = layer_computer.train_vertices.detach().numpy()
-    #     sub_node_all= set(sub_node_all)
-    #     # adj_new = {}
-    #     # fsthop_nei = []
-    #     # for id in train_vertices:
-    #     #     adj_id = adj[id]
-    #     #     adj_new[id] = adj_id & sub_node_all
-    #     #     fsthop_nei.extend(adj_new[id])
-    #
-    #     # return adj_new, set(fsthop_nei)
-    #     data_ad = context.glContext.dgnnClient.clustergcnSample(train_vertices,sub_node_all,k)
-    #     adj_new=data_ad[0]
-    #     nei_set=data_ad[1]
-    #     return adj_new, nei_set
+
 
 
 cluster_gcn = CLUSTERGCN()

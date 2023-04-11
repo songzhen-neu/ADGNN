@@ -21,7 +21,7 @@ from multiprocessing import cpu_count
 from adgnn.util_python.timecounter import time_counter
 from adgnn.sample.agg_difference import aggDiff
 from adgnn.sample.bns_gcn import bns_gcn
-from adgnn.sample.random_sample import random_sample
+from adgnn.sample.graphsage import random_sample
 from adgnn.sample.fastgcn import fastgcn
 from adgnn.sample.cluster_gcn import cluster_gcn
 import numpy as np
@@ -30,7 +30,7 @@ import copy
 from adgnn.util_python.evaluation import evaluator
 import gc
 import time
-from adgnn.sample.fixed import fixed_sample
+from adgnn.sample.agl import fixed_sample
 from adgnn.util_python.evaluate_ad import eval_ad
 
 cpu_num = cpu_count()  # 自动获取最大核心数目

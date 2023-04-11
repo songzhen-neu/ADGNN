@@ -13,7 +13,6 @@ from adgnn.pipeline.pipe_dorylus import PipeDorylus
 from adgnn.util_python.timecounter import time_counter
 
 class GraphConvolution(nn.Module):
-    # 初始化层：输入feature维度，输出feature维度，权重，偏移
     def __init__(self, in_features, out_features, layer_id, bias=True):
         super(GraphConvolution, self).__init__()
         self.layer_id = layer_id

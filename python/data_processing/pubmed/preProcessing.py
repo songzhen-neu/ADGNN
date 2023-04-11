@@ -2,7 +2,7 @@ import numpy as np
 from collections import defaultdict
 import sys
 
-def load_pubmed():  # pubmed数据集部分和cora的基本相同
+def load_pubmed():
     # hardcoded for simplicity...
     num_nodes = 19717
     num_feats = 500

@@ -1,7 +1,7 @@
 import torch
 
 from python.adgnn.sample.agg_difference import aggDiff
-from python.adgnn.sample.random_sample import random_sample
+from python.adgnn.sample.graphsage import random_sample
 from python.adgnn.sample.bns_gcn import bns_gcn
 from adgnn.util_python.comp_tree import generateAggEmb
 import copy

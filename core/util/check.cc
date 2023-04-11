@@ -27,7 +27,6 @@ void Check::check_partition_pass(
 }
 
 void Check::check_initParameter_ServerStore() {
-    // 输出初始化的weights和bias，看层数和维度是否正确
     cout << "*******check initParameter start***********" << endl;
     map<string, vector<double>>::iterator it;
     for (it = ServerStore::params.begin(); it != ServerStore::params.end(); it++) {

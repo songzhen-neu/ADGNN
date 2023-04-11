@@ -763,7 +763,7 @@ void DGNNClient::readDataAndInit() {
 
     ifstream partitionInFile(partitionFile);
     if (!partitionInFile.is_open()) {
-        cout << "partitionInFile 未成功打开文件" << endl;
+        cout << "partitionInFile open unsuccessfully" << endl;
     }
     int count_worker = 0;
     string temp;
@@ -791,11 +791,11 @@ void DGNNClient::readDataAndInit() {
 
     ifstream featInFile(feat_fn);
     if (!featInFile.is_open()) {
-        cout << "featInFile 未成功打开文件" << endl;
+        cout << "featInFile open unsuccessfully" << endl;
     }
 
     int count_flag = 0;
-    cout << "正在处理特征数据 " << endl;
+    cout << "processing data " << endl;
 
     while (true) {
         getline(featInFile, temp);
@@ -816,26 +816,17 @@ void DGNNClient::readDataAndInit() {
             cout << "have processed " << count_flag << " features" << endl;
         }
     }
-//    if(WorkerStore::worker_id==0){
-//        cout<<"uyyyyyyyyyyyyyyy:"<<WorkerStore::graph.features[16976].size()<<endl;
-//        cout<<"uyyyyyyyyyyyyyyy:"<<WorkerStore::graph.features[2065].size()<<endl;
-//    }
-//    for(auto& id:WorkerStore::graph.features){
-//
-//        if(id.second.size()!=WorkerStore::feat_size){
-//            cout<<"xxxxxxxxxx:"<<id.first<<","<<id.second.size()<<endl;
-//        }
-//    }
+
 
 
     count_flag = 0;
     featInFile.close();
 
 
-    cout << "正在处理邻接表数据" << endl;
+    cout << "processing adj" << endl;
     ifstream adjInFile(adj_fn);
     if (!adjInFile.is_open()) {
-        cout << "adjInFile 未成功打开文件" << endl;
+        cout << "adjInFile open unsuccessfully" << endl;
     }
     while (getline(adjInFile, temp)) {
         vector<string> v;
@@ -859,7 +850,7 @@ void DGNNClient::readDataAndInit() {
 
     ifstream labelInFile(label_fn);
     if (!labelInFile.is_open()) {
-        cout << "labelInFile 未成功打开文件" << endl;
+        cout << "labelInFile open unsuccessfully" << endl;
     }
     while (getline(labelInFile, temp)) {
         vector<string> v;
@@ -890,7 +881,7 @@ void DGNNClient::readDataAndInit() {
         }
     }
 
-    cout<<"uyyyyyyyyyyyyyyy:"<<WorkerStore::graph.features.size()<<","<<WorkerStore::graph.nodes.size()<<","<<WorkerStore::graph.v2wk.size()<<endl;
+    cout<<"data:"<<WorkerStore::graph.features.size()<<","<<WorkerStore::graph.nodes.size()<<","<<WorkerStore::graph.v2wk.size()<<endl;
 
 
 }

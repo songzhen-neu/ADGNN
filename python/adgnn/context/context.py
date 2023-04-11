@@ -206,7 +206,7 @@ class Context(object):
         self.sample=Sample()
         self.worker_id = self.config['id']
         id = self.config['id']
-        # 当前机器的客户端，需要启动server，以保证不同机器间中间表征向量传输
+
 
         self.dgnnClient.serverAddress = self.config['worker_address'][id]
 
@@ -220,26 +220,10 @@ class Context(object):
 
         # self.dgnnMasterRouter.init_by_address(self.config['master_address'])
 
-        # 在c++端初始化dgnnWorkerRouter
         self.dgnnClientRouterForCpp.initWorkerRouter(self.config['worker_address'])
         self.dgnnClientRouterForCpp.initServerRouter(self.config['server_address'])
 
-        # 所有创建的类都在一个进程里，通过c++对静态变量操作，在所有类中都可见
-        # print(dgnnClient.testString)
-        # print(dgnnMasterRouter.testString)
-        # print(dgnnServerRouter[0].testString)
 
-        # start=time.time()
-        # self.dgnnMasterRouter.pullDataFromMasterGeneral(
-        #     id, self.config['worker_num'],
-        #     self.config['data_num'],
-        #     self.config['data_path'],
-        #     self.config['feature_dim'],
-        #     self.config['class_num'],
-        #     self.config['partitionMethod'],
-        #     self.config['edge_num'])
-        # end=time.time()
-        # print("pullDataFromMasterGeneral time:{0}".format(end-start))
 
 
 

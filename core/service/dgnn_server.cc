@@ -15,10 +15,10 @@ Status ServiceImpl::pullDataFromMasterGeneral(
     cout << "worker " << request->workerid() << " has arrived!" << endl;
     int workerid = request->workerid();
     int workerNum = request->workernum();
-    // 除了worker 0以外，其他所有线程都进行等待，worker 0进行分区，分区完成后notify其他进程
+
     if (request->workerid() == 0) {
         unique_lock<mutex> lck(ThreadUtil::mtx);
-        // 开始进行分区
+
         Check::check_partition_pass(
                 request->workernum(),
                 request->partition().datanum(),
@@ -42,22 +42,21 @@ Status ServiceImpl::pullDataFromMasterGeneral(
 
     } else {
         unique_lock<mutex> lck(ThreadUtil::mtx);
-        // 进入等待
+
         while (!ThreadUtil::ready) {
             ThreadUtil::cv.wait(lck);
         }
     }
 
 
-    // 开始返回每个worker的数据
-    // 构建nodes
+
     NodeMessage *nodeMessage = reply->nodelist().New();
     for (int id:GeneralPartition::nodes[workerid]) {
         nodeMessage->add_nodes(id);
     }
     reply->set_allocated_nodelist(nodeMessage);
 
-    // 构建feature
+
     DataMessage_FeatureMessage *featureMessage = reply->featurelist().New();
     for (auto &id_feature : GeneralPartition::features[workerid]) {
         DataMessage_FeatureMessage_FeatureItem *item = featureMessage->add_features();
@@ -68,7 +67,7 @@ Status ServiceImpl::pullDataFromMasterGeneral(
     }
     reply->set_allocated_featurelist(featureMessage);
 
-    // 构建label
+
     DataMessage_LabelMessage *labelMessage = reply->labellist().New();
     for (auto &id_label:GeneralPartition::labels[workerid]) {
         DataMessage_LabelMessage_LabelItem *item = labelMessage->add_labels();
@@ -77,7 +76,7 @@ Status ServiceImpl::pullDataFromMasterGeneral(
     }
     reply->set_allocated_labellist(labelMessage);
 
-    // 构建adjs
+
     DataMessage_AdjMessage *adjMessage = reply->adjlist().New();
     for (const auto &id_neibors:GeneralPartition::adjs[workerid]) {
         DataMessage_AdjMessage_AdjItem *adjItem = adjMessage->add_adjs();
@@ -128,7 +127,7 @@ Status ServiceImpl::freeMaster(ServerContext *context, const NullMessage *reques
 
 Status ServiceImpl::workerPullEmb(
         ServerContext *context, const EmbGradMessage *request, EmbGradMessage *reply) {
-    // 这里请求的nodes的顺序和返回的tensor的顺序要保持一致
+
 //    clock_t start = clock();
     string mode = "none"; // mom mv none
 
@@ -169,7 +168,7 @@ Status ServiceImpl::workerPullEmb(
 Status ServiceImpl::initParameter(ServerContext *context, const NetInfoMessage *request, NullMessage *reply) {
     int serverId = ServerStore::serverId;
     cout << "Server " << serverId << ": initParameters begining!" << endl;
-    // 还原request
+
     int worker_num = request->workernum();
     int feat_dim = request->featuredim();
     int server_num = request->servernum();
@@ -193,7 +192,7 @@ Status ServiceImpl::initParameter(ServerContext *context, const NetInfoMessage *
              << class_dim << ",hidden size:" << hid << endl;
     }
 
-    // 0号线程初始化，其他的等待
+
     if (wid == 0) {
         unique_lock<mutex> mutex(ThreadUtil::mtx_initParameter);
         // 初始化神经网络参数
@@ -349,91 +348,7 @@ Status ServiceImpl::server_PullParams(ServerContext *context, const ParamGrad *r
 }
 
 
-//Status ServiceImpl::server_updateParam(ServerContext *context, const ParamGrad *request, NullMessage *reply) {
-//    if (request->wid() == 0) {
-//        unique_lock<mutex> lck(ThreadUtil::mtx_updateModels);
-//        ServerStore::grads_agg[request->id()].clear();
-//        // vector is initialized as 0 by default
-//        vector<double> tmp(request->elems_size());
-//        ServerStore::grads_agg[request->id()] = tmp;
-//        cout << "********server_updateModels-clear gradient aggregations******" << endl;
-//        ThreadUtil::ready_updateModels = true;
-//        ThreadUtil::cv_updateModels.notify_all();
-//    } else {
-//        unique_lock<mutex> lck(ThreadUtil::mtx_updateModels);
-//        while (!ThreadUtil::ready_updateModels) {
-//            ThreadUtil::cv_updateModels.wait(lck);
-//        }
-//    }
-//    int grad_size = request->elems_size();
-//    string grad_id = request->id();
-//    float alpha = request->lr();
-//    int wid = request->wid();
-//
-//    // 多个worker一起更新参数，先聚合所有worker的梯度
-//    // 聚合worker的梯度时，先上锁
-////    pthread_mutex_lock(&ThreadUtil::mtx_updateModels_addGrad);
-//    unique_lock<mutex> lck(ThreadUtil::mtx_updateModels);
-//
-//    auto &grad_agg = ServerStore::grads_agg[grad_id];
-//    // add gradients to grads_agg
-//    for (int i = 0; i < grad_size; i++) {
-//        grad_agg[i] = grad_agg[i] + request->elems(i);
-//    }
-//    cout << "********server_updateModels----gradient aggregating end******" << endl;
-//    lck.unlock();
-//
-//    // 每个worker累积完梯度就可以释放锁了
-////    pthread_mutex_unlock(&ThreadUtil::mtx_updateModels_addGrad);
-//
-//    // 有一个线程更新参数,更新参数的前提是所有梯度都已聚合完成
-//    // 确保所有机器都已到达
-//
-//    lck.lock();
-//    ThreadUtil::count_worker_for_updateModels++;
-//    if (ThreadUtil::count_worker_for_updateModels == ServerStore::worker_num) {
-//        ThreadUtil::cv_updateModels.notify_all();
-//        ThreadUtil::count_worker_for_updateModels = 0;
-//        ThreadUtil::ready_updateModels = false;
-//    } else {
-//        ThreadUtil::cv_updateModels.wait(lck);
-//    }
-//
-//    // 下面是做check
-//    if (wid == 0) {
-//        cout << ThreadUtil::count_worker_for_updateModels << " workers have been added into the gradient aggregations!"
-//             << endl;
-//        cout << "param id:" << grad_id << "," << "grad size:" << grad_agg.size() << endl;
-//    }
-//
-//    // worker 0线程开始负责更新参数
-//    if (wid == 0) {
-//        ServerStore::t++;
-//        float beta_1 = 0.9;
-//        float beta_2 = 0.999;
-//        float epsilon = 1e-8;
-//        bool isAdam = true;
-//        auto &m_grads_t = ServerStore::m_grads_t[grad_id];
-//        auto &v_grads_t = ServerStore::v_grads_t[grad_id];
-//        auto &param = ServerStore::params[grad_id];
-//        // 如果m_weight_t,v_weight_t,m_bias_t,v_bias_t为空，那么初始化
-//        for (int i = 0; i < grad_size; i++) {
-//            double g_t = grad_agg[i];
-//            if (isAdam) {
-//                m_grads_t[i] = beta_1 * m_grads_t[i] + (1 - beta_1) * g_t;
-//                v_grads_t[i] = beta_2 * v_grads_t[i] + (1 - beta_2) * g_t * g_t;
-//                double m_cap = m_grads_t[i] / (1 - (pow(beta_1, ServerStore::t)));
-//                double v_cap = v_grads_t[i] / (1 - (pow(beta_2, ServerStore::t)));
-//                param[i] -= (alpha * m_cap) / (sqrt(v_cap) + epsilon);
-//            } else {
-//                param[i] -= alpha * g_t;
-//            }
-//        }
-//
-//
-//    }
-//    return Status::OK;
-//}
+
 
 void barrier_update() {
     unique_lock<mutex> lck_barrier(ThreadUtil::mtx_barrier);
@@ -472,8 +387,7 @@ Status ServiceImpl::server_updateParam(ServerContext *context, const ParamGrad *
     float alpha = request->lr();
     int wid = request->wid();
 
-    // 多个worker一起更新参数，先聚合所有worker的梯度
-    // 聚合worker的梯度时，先上锁
+
 //    pthread_mutex_lock(&ThreadUtil::mtx_updateModels_addGrad);
     unique_lock<mutex> lck_update(ThreadUtil::mtx_updateModels);
 
@@ -485,25 +399,11 @@ Status ServiceImpl::server_updateParam(ServerContext *context, const ParamGrad *
     cout << "********server_updateModels----gradient aggregating end******" << endl;
     lck_update.unlock();
 
-    // 每个worker累积完梯度就可以释放锁了
-//    pthread_mutex_unlock(&ThreadUtil::mtx_updateModels_addGrad);
 
-    // 有一个线程更新参数,更新参数的前提是所有梯度都已聚合完成
-    // 确保所有机器都已到达
-
-//    lck.lock();
-//    ThreadUtil::count_worker_for_updateModels++;
-//    if (ThreadUtil::count_worker_for_updateModels == ServerStore::worker_num) {
-//        ThreadUtil::cv_updateModels.notify_all();
-//        ThreadUtil::count_worker_for_updateModels = 0;
-//        ThreadUtil::ready_updateModels = false;
-//    } else {
-//        ThreadUtil::cv_updateModels.wait(lck);
-//    }
 
     barrier_update();
 
-    // 下面是做check
+
     if (wid == 0) {
         cout << ThreadUtil::count_worker_for_updateModels << " workers have been added into the gradient aggregations!"
              << endl;
@@ -512,7 +412,6 @@ Status ServiceImpl::server_updateParam(ServerContext *context, const ParamGrad *
 
 
 
-    // worker 0线程开始负责更新参数
     if (wid == 0) {
         ServerStore::t[grad_id]++;
         float beta_1 = 0.9;
@@ -525,7 +424,6 @@ Status ServiceImpl::server_updateParam(ServerContext *context, const ParamGrad *
         auto bias_correction1 = 1 - pow(beta_1, ServerStore::t[grad_id]);
         auto bias_correction2 = 1 - pow(beta_2, ServerStore::t[grad_id]);
 
-        // 如果m_weight_t,v_weight_t,m_bias_t,v_bias_t为空，那么初始化
         for (int i = 0; i < grad_size; i++) {
             double g_t = grad_agg[i];
             if (isAdam) {
@@ -627,19 +525,6 @@ ServiceImpl::workerPullRmtTrainFeat(ServerContext *context, const EmbGradMessage
     unique_lock<mutex> lck(ThreadUtil::mtx_rmtfeature_insert);
     for (int i = 0; i < nodeNum; i++) {
         int oid = request->nodes(i);
-        if(!WorkerStore::graph.features.count(oid)){
-            cout<<"dont contains ::::::::::::"<<oid<<endl;
-        }
-
-//        if(WorkerStore::graph.features[oid].empty()){
-//            cout << "hhhhhhhhhhhhhhh "<< wid<<":"<<WorkerStore::graph.v2wk[oid]<<"," << oid << "," << WorkerStore::graph.features[oid].size() << endl;
-//        }
-
-
-//        cout<<"workeriddddddd "<<wid<<":"<<oid<<endl;
-//        if(WorkerStore::graph.features[oid].size()==0){
-//        cout<<"ooooooooooooooooid:"<<oid<<endl;
-//        }
         mutable_emb_reply->Add(WorkerStore::graph.features[oid].begin(),
                                WorkerStore::graph.features[oid].end());
     }
@@ -704,32 +589,20 @@ Status ServiceImpl::pushEmbs(ServerContext *context, const EmbGradMessage *reque
     }
     auto &subgraph = graph->subgraphs[status];
 
-//    auto buffer = WorkerStore::emb_reply_4push.request();
-//    auto ptr_result = (float *) buffer.ptr;
-//    auto *ptr_result = (float *) WorkerStore::emb_reply_4push.request().ptr;
+
     auto* ptr_result=WorkerStore::emb_reply_4push_ptr;
 
 
     // this is used to build the neighboring embeddings for layer_id
     auto old2new_map = subgraph.graphlayers[layer_id].o2n_map;
     int emb_dim = request->featsize();
-//    int loc_num=subgraph.graphlayers[layer_id].vnum_tarv_locnei_rmtnei[0]+subgraph.graphlayers[layer_id].vnum_tarv_locnei_rmtnei[1];
 
-//    cout<<"****************************"<<graph_mode<<"******************"<<endl;
-//    cout<<"old2new_map layerid:"<<layer_id<<endl;
-//    for(auto& o2n:old2new_map){
-//        cout<<o2n.first<<","<<o2n.second<<endl;
-//    }
     unique_lock<mutex> lck(ThreadUtil::mtx_pushembs);
 
     for (int i = 0; i < request->nodes_size(); i++) {
         int id = request->nodes(i);
         int new_id = old2new_map[id];
-//        cout<<id<<","<<new_id<<": ";
-//        for(int x=0;x<emb_dim;x++){
-//            cout<<request->embs().Get(i*emb_dim+x)<<",";
-//        }
-//        cout<<endl;
+
         copy(request->embs().begin() + i * emb_dim, request->embs().begin() + (i + 1) * emb_dim,
              ptr_result + new_id * emb_dim);
     }

@@ -255,18 +255,8 @@ Router::getRmtFeat(const string &status) {
     vector<pthread_t> pthreads(WorkerStore::worker_num);
 
 
-//    auto result = py::array_t<float>(totalNodeNum * feat_size);
-//    result.resize({totalNodeNum, feat_size});
-//    py::buffer_info buf_result = result.request();
-//    float *ptr_result = (float *) buf_result.ptr;
-//    cout<<"fffff"<<endl;
-//    for (int i = 0; i < totalNodeNum * feat_size; i++) {
-//        if (ptr_result[i] != 0) {
-//            ptr_result[i] = 0;
-//        }
-//    }
-//    cout<<"hhhh"<<endl;
-    //  从远端异步获取
+
+
     for (int i = 0; i < worker_num; i++) {
         if (i != local_id) {
 //            pthread_t p;
@@ -372,14 +362,14 @@ py::array_t<float> Router::pushEmbs(int layer_id, const string &status,const str
     pthread_vec_join(pthreads);
 
     Router::dgnnServerRouter[0]->server_Barrier();
-//    cout<<"dddddddddddddddddd"<<endl;
+
 
     // fill local neighbor and target_v
     auto& target_v=subgraph.graphlayers[layer_id].target_v;
     auto& loc_nei=subgraph.graphlayers[layer_id].wk2nei_pull[WorkerStore::worker_id];
 
     auto& o2n_map_cur=subgraph.graphlayers[layer_id].o2n_map;
-//    cout<<"eeeeeeeeeeeeeeeeeeeeee"<<endl;
+
 
     auto result= py::array_t<float>(nei_num*emb_dim);
     auto* result_ptr = (float *)result.request().ptr;

@@ -12,7 +12,7 @@ using namespace std;
 
 class ThreadUtil {
 public:
-    static mutex mtx; // 全局互斥锁.
+    static mutex mtx;
     static bool ready;
     static mutex mtx_initParameter;
     static bool ready_initParameter;
@@ -39,11 +39,11 @@ public:
 
     static int count_accuracy;
     static mutex mtx_accuracy;
-    static condition_variable cv_accuracy; // 全局条件变量.
+    static condition_variable cv_accuracy;
 
     static int count_nodes;
     static mutex mtx_nodes;
-    static condition_variable cv_nodes; // 全局条件变量.
+    static condition_variable cv_nodes;
 
     static mutex mtx_gcompensate;
 

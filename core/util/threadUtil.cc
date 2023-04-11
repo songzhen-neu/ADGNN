@@ -2,8 +2,8 @@
 
 #include "threadUtil.h"
 
-// 只在head中声明，不要在head中定义，否则会报multi definition错误
-mutex ThreadUtil::mtx; // 全局互斥锁.
+
+mutex ThreadUtil::mtx;
 bool ThreadUtil::ready = false;
 condition_variable ThreadUtil::cv;
 int ThreadUtil::arrived_worker_num = 0;
@@ -76,7 +76,7 @@ mutex ThreadUtil::mtx_ad;
 
 int ThreadUtil::count_nodes;
 mutex ThreadUtil::mtx_nodes;
-condition_variable ThreadUtil::cv_nodes; // 全局条件变量.
+condition_variable ThreadUtil::cv_nodes;
 
 mutex ThreadUtil::mtx_rmtfeature_insert;
 

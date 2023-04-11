@@ -35,7 +35,7 @@ public:
 
     static string serverip;
 
-    // 用来记录每轮迭代的神经网络权重
+
     static int layer_num;
     static int worker_id;
     static int worker_num;

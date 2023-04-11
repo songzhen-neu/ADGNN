@@ -1,7 +1,5 @@
 class Graph():
     def __init__(self, graph_train, graph_val, graph_test, idx_train, idx_test, idx_val, v2wk_map, adj, labels, feats,layer_num):
-        # 这里除了agg_node_old和fsthop_for_worker是old id，其他的全部是编码好的
-        # agg_node_old是需要进行聚合全部顶点
         self.subgraph = {}
         self.subgraph['train'] = graph_train
         self.subgraph['val'] = graph_val

@@ -93,46 +93,34 @@ void setVertexNum(int tv_size, unordered_map<int, unordered_set<int>> &nei, int 
 }
 
 void GraphBuild::updateGraphLayer(SubGraph &subgraph, int lid) {
-//    clock_t start = clock();
+
     auto &target_v_tmp = subgraph.graphlayers[lid].target_v;
     auto &adj = subgraph.graphlayers[lid].adj;
     auto wk2nei_map = getSplitedNeiSet(target_v_tmp, adj, subgraph.graphlayers[lid]);
-//    clock_t end = clock();
-//    cout << "!!!!!!!!!!!!!!-1111111111111 time: " << (double) (end - start) / CLOCKS_PER_SEC << " s" << endl;
 
-//    start = clock();
+
+
     setVertexNum(target_v_tmp.size(), wk2nei_map, lid, subgraph);
-//    end = clock();
-//    cout << "!!!!!!!!!!!!!!-22222222222 time: " << (double) (end - start) / CLOCKS_PER_SEC << " s" << endl;
 
-//    start = clock();
+
     set_union(target_v_tmp.begin(), target_v_tmp.end(), wk2nei_map[WorkerStore::worker_id].begin(),
               wk2nei_map[WorkerStore::worker_id].end(),
               inserter(subgraph.graphlayers[lid - 1].target_v, subgraph.graphlayers[lid - 1].target_v.begin()));
-//    end = clock();
-//    cout << "!!!!!!!!!!!!!!-33333333333 time: " << (double) (end - start) / CLOCKS_PER_SEC << " s" << endl;
 
-//    start = clock();
+
     auto& locv_by_otherwk = Router::sendInNodes2WK(lid, wk2nei_map);
-//    end = clock();
-//    cout << "!!!!!!!!!!!!!!-444444444444 time: " << (double) (end - start) / CLOCKS_PER_SEC << " s" << endl;
 
-//    start = clock();
 
     for (auto &v_wk:locv_by_otherwk) {
         if (v_wk.first != WorkerStore::worker_id) {
             subgraph.graphlayers[lid - 1].target_v.insert(v_wk.second.begin(), v_wk.second.end());
         }
     }
-//    end = clock();
-//    cout << "!!!!!!!!!!!!!!-5555555555555 time: " << (double) (end - start) / CLOCKS_PER_SEC << " s" << endl;
 
-//    start = clock();
     subgraph.graphlayers[lid].wk2nei_pull = wk2nei_map;
     subgraph.graphlayers[lid - 1].wk2nei_push = locv_by_otherwk;
 
-//    end = clock();
-//    cout << "!!!!!!!!!!!!!!-6666666666666 time:  time: " << (double) (end - start) / CLOCKS_PER_SEC << " s" << endl;
+
 }
 
 void
