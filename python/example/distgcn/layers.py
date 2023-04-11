@@ -3,14 +3,14 @@ import os
 import psutil
 import torch
 import torch.nn as nn
-import ecgraph
-import ecgraph.Function as F
-import ecgraph.util_python.remote_access as rmt
-from ecgraph.util_python.timecounter import TimeCounter
-from ecgraph.context.context import glContext
-from ecgraph.pipeline.pipegraph import PipeGraph
-from ecgraph.pipeline.pipe_dorylus import PipeDorylus
-from ecgraph.util_python.timecounter import time_counter
+import adgnn
+import adgnn.Function as F
+import adgnn.util_python.remote_access as rmt
+from adgnn.util_python.timecounter import TimeCounter
+from adgnn.context.context import glContext
+from adgnn.pipeline.pipegraph import PipeGraph
+from adgnn.pipeline.pipe_dorylus import PipeDorylus
+from adgnn.util_python.timecounter import time_counter
 
 class GraphConvolution(nn.Module):
     # 初始化层：输入feature维度，输出feature维度，权重，偏移
@@ -20,14 +20,14 @@ class GraphConvolution(nn.Module):
         self.in_features = in_features
         self.out_features = out_features
 
-        self.weight = ecgraph.ECTensor(tensor=torch.FloatTensor(in_features, out_features),
-                                       name='w' + str(self.layer_id), requires_grad=True)
+        self.weight = adgnn.ECTensor(tensor=torch.FloatTensor(in_features, out_features),
+                                     name='w' + str(self.layer_id), requires_grad=True)
         torch.manual_seed(1)
         nn.init.xavier_uniform_(self.weight.tensor)
 
         if bias:
-            self.bias = ecgraph.ECTensor(tensor=torch.FloatTensor(1, out_features), name='b' + str(self.layer_id),
-                                         requires_grad=True)
+            self.bias = adgnn.ECTensor(tensor=torch.FloatTensor(1, out_features), name='b' + str(self.layer_id),
+                                       requires_grad=True)
             nn.init.zeros_(self.bias.tensor)
 
     def forward(self, input, graph):

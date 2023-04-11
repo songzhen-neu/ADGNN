@@ -1,4 +1,4 @@
-from ecgraph.context import context as ct
+from adgnn.context import context as ct
 import numpy as np
 import scipy.sparse as sp
 

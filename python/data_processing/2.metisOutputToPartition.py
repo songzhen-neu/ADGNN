@@ -1,4 +1,4 @@
-from ecgraph.context import context as ct
+from adgnn.context import context as ct
 
 fileName = ct.glContext.config['data_path']
 workerNum = ct.glContext.config['worker_num']

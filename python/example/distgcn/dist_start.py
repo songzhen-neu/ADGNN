@@ -6,32 +6,32 @@ sys.path.insert(1, BASE_PATH + '/../')
 sys.path.insert(2, BASE_PATH + '/../../')
 sys.path.insert(3, BASE_PATH + '/../../../')
 print(BASE_PATH)
-import ecgraph.util_python.param_parser as pp
+import adgnn.util_python.param_parser as pp
 import psutil
-import ecgraph.Function as F
-import ecgraph.util_python.param_util as pu
+import adgnn.Function as F
+import adgnn.util_python.param_util as pu
 import torch as torch
 from sklearn.metrics import accuracy_score
 from cmake.build.lib.pb11_ec import *
-from ecgraph.context import context
+from adgnn.context import context
 from example.distgcn.models import GCN
-from ecgraph.util_python import data_trans as dt
-from ecgraph.distributed.engine import Engine
+from adgnn.util_python import data_trans as dt
+from adgnn.distributed.engine import Engine
 from multiprocessing import cpu_count
-from ecgraph.util_python.timecounter import time_counter
-from ecgraph.sample.agg_difference import aggDiff
-from ecgraph.sample.bns_gcn import bns_gcn
-from ecgraph.sample.random_sample import random_sample
-from ecgraph.sample.fastgcn import fastgcn
-from ecgraph.sample.cluster_gcn import cluster_gcn
+from adgnn.util_python.timecounter import time_counter
+from adgnn.sample.agg_difference import aggDiff
+from adgnn.sample.bns_gcn import bns_gcn
+from adgnn.sample.random_sample import random_sample
+from adgnn.sample.fastgcn import fastgcn
+from adgnn.sample.cluster_gcn import cluster_gcn
 import numpy as np
-from python.ecgraph.util_python.evaluation import *
+from python.adgnn.util_python.evaluation import *
 import copy
-from ecgraph.util_python.evaluation import evaluator
+from adgnn.util_python.evaluation import evaluator
 import gc
 import time
-from ecgraph.sample.fixed import fixed_sample
-from ecgraph.util_python.evaluate_ad import eval_ad
+from adgnn.sample.fixed import fixed_sample
+from adgnn.util_python.evaluate_ad import eval_ad
 
 cpu_num = cpu_count()  # 自动获取最大核心数目
 # print("cpu num:{0}".format(cpu_num))

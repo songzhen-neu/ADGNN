@@ -1,10 +1,10 @@
 import torch.nn as nn
 from example.distgcn.layers import GraphConvolution
 import torch
-import ecgraph.Function as F
-from ecgraph.util_python.remote_access import catCacheFeature
-import ecgraph
-from ecgraph.context import context
+import adgnn.Function as F
+from adgnn.util_python.remote_access import catCacheFeature
+import adgnn
+from adgnn.context import context
 
 
 class GCN(nn.Module):
@@ -25,7 +25,7 @@ class GCN(nn.Module):
 
     def forward(self, graph):
         context.glContext.graphBuild.setGraphMode(graph.graph_mode)
-        x = ecgraph.ECTensor(graph.feat_data) # Dorylus
+        x = adgnn.ECTensor(graph.feat_data) # Dorylus
         # x = catCacheFeature(graph) # PipeGraph
         for i in range(1, self.layerNum + 1):
             x = self.gc[i](x, graph)

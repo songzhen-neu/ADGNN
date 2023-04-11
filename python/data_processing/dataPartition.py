@@ -4,7 +4,7 @@
 # featDim=5
 # classNum=2
 
-from ecgraph.context import context as context
+from adgnn.context import context as context
 import time
 
 fileName= context.glContext.config['data_path']

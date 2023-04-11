@@ -1,5 +1,5 @@
 import linecache
-from ecgraph.context import context
+from adgnn.context import context
 
 cluster_num=context.glContext.config['sample_num'][1]
 worker_num=context.glContext.config['worker_num']
