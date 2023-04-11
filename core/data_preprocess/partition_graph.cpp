@@ -96,7 +96,6 @@ void startPartition(int worker_num, string partitionMethod, int nodeNum, string 
         int vertex_id = atoi(v[0].c_str());
         int neibor_id = atoi(v[1].c_str());
 
-        // 开始构造邻接表
         adj_map[vertex_id].insert(neibor_id);
         adj_map[neibor_id].insert(vertex_id);
         count_flag++;
