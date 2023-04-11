@@ -110,12 +110,12 @@ void startPartition(int worker_num, string partitionMethod, int nodeNum, string 
 
 
 
-    // 开始处理feature和label,同样使用in file stream
+
 
 
 
     map<int, vector<float>> feature;
-    vector<int> label_array(nodeNum); // 如果需要获取length，那么这块只能赋值常量
+    vector<int> label_array(nodeNum);
 //    map<string, int> label_map;
     int count_label = 0;
 
@@ -153,9 +153,7 @@ void startPartition(int worker_num, string partitionMethod, int nodeNum, string 
 
     featInFile.close();
 
-    // 开始划分，邻接表、顶点map、属性、标签
-    // 这里顶点按照哈希（取余数）的方式进行划分，因此不需要建立map
-    // 邻接表：map<int, map<int,set>>
+
 
     cout << "adj_map size:" << adj_map.size() << endl;
     cout << "edge number:" << edge_num << endl;
