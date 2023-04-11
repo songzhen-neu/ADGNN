@@ -36,6 +36,6 @@ RUN mkdir -p /mnt/data
 # RUN mkdir -p /mnt/data/nfs/graph-learn/distributed/
 
 
-CMD mount -o nolock -t nfs 202.199.6.224:/home/hdd/ecg/data /mnt/data && python3 $code_path $role_id $worker_server_num $ifctx \
+CMD mount -o nolock -t nfs IPAddress:/home/hdd/ecg/data /mnt/data && python3 $code_path $role_id $worker_server_num $ifctx \
 $data_path $hidden $vtx_edge_feat_class_train_val_test $iter_lr_pttMethod_printInterval $sampleInfo $adConfig $servers \
 $workers
