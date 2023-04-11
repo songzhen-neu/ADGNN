@@ -69,8 +69,8 @@ edges.txt (src   dst)
 
 5: Run 1 worker and 1 server as an example
 ```
-Run "python/dist_gcn_agg_grad/dist_start.py" with "--role_id=server,0"
-Run "python/dist_gcn_agg_grad/dist_start.py" with "--role_id=worker,0"
+Run "python/example/distgnn/dist_start.py" with "--role_id=server,0"
+Run "python/example/distgnn/dist_start.py" with "--role_id=worker,0"
 ```
 The other settings are shown at the beginning "argument list".
 
