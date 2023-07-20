@@ -139,9 +139,11 @@ def pushEmbs(layer_id, graph, input):
     if layer_id==1:
         return input
     else:
-        embs=context.glContext.dgnnClientRouterForCpp.pushEmbs(layer_id,graph.status,graph.graph_mode,input.tensor.detach().numpy())
+        embs=context.glContext.dgnnClientRouterForCpp.pushEmbs(layer_id,graph.status,graph.graph_mode,input.tensor.cpu().detach().numpy())
         embs = torch.FloatTensor(embs)
         embs = ECTensor(embs, input, None, 'push_embs', None, requires_grad=True)
+        if context.glContext.config['device']!='cpu':
+            embs.tensor=embs.tensor.cuda()
         embs.layer_id=layer_id
         input.root=embs
         return embs

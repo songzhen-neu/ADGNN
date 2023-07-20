@@ -31,7 +31,14 @@ string WorkerStore::graph_mode;
 Graph WorkerStore::graph;
 Graph WorkerStore::graph_sampled;
 
+// FOS
+unordered_map<int,vector<int>> WorkerStore::start_indices;
+unordered_map<int,int> WorkerStore::range_size;
+
 unordered_map<string,unordered_map<int,unordered_set<int>>> WorkerStore::loc_rmt_adj;
+
+ double WorkerStore::sample_time=0;
+double WorkerStore::construction_time=0;
 
 
 

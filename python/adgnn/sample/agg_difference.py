@@ -60,38 +60,65 @@ class AggDiff(Sample):
             benefit_m=int((train_time_full+sample_time)/train_time_sampled)
             # degree=context.glContext.config['edge_num']*2/context.glContext.config['data_num']
             # sample_ratio=degree/context.glContext.config['sample_num'][0]
-            self.m=int(benefit_m*2)
-            # if self.benefit_m<3:
-            #     self.benefit_m=3
-            if self.m<10:
-                self.m=10
-            print(self.m,self.benefit_m)
-            self.m,self.benefit_m=context.glContext.dgnnServerRouter[0].setM(context.glContext.config['id'],self.m,self.benefit_m)
+            if self.enab_adap_m or context.glContext.config['m_ad']>=200:
+                self.m=int(benefit_m*2)
+                if self.m<10:
+                    self.m=10
+                print(self.m,self.benefit_m)
+                self.m,self.benefit_m=context.glContext.dgnnServerRouter[0].setM(context.glContext.config['id'],self.m,self.benefit_m)
+            else:
+                print(self.m,self.benefit_m)
+                self.m,self.benefit_m=context.glContext.dgnnServerRouter[0].setM(context.glContext.config['id'],self.m,self.benefit_m)
 
 
-    def adapMTuner(self, epoch):
-        if not self.pk_last:
-            pk = self.model.gc[1].weight.tensor
-            for i in range(2, context.glContext.config['layer_num'] + 1):
-                pk = pk.mm(self.model.gc[i].weight.tensor)
-            pk = np.linalg.norm(pk, ord=2)
-            self.pk_last = pk
+
+    def adapMTuner(self, epoch, model_type):
+        if model_type=='GCN':
+            if not self.pk_last:
+                pk = self.model.gc[1].weight.tensor
+                for i in range(2, context.glContext.config['layer_num'] + 1):
+                    pk = pk.mm(self.model.gc[i].weight.tensor)
+                pk = np.linalg.norm(pk, ord=2)
+                self.pk_last = pk
+            else:
+                pk = self.model.gc[1].weight.tensor
+                for i in range(2, context.glContext.config['layer_num'] + 1):
+                    pk = pk.mm(self.model.gc[i].weight.tensor)
+                pk = np.linalg.norm(pk, ord=2)
+                if epoch != 0:
+                    if pk > 1.1 * self.pk_last:
+                        if self.m > self.benefit_m:
+                            self.m -= int(self.m*0.2)
+                        else:
+                            self.m = 1
+                    elif pk < self.pk_last:
+                        self.m += int(self.m*0.2)
+
+                # print(pk, self.m)
+                self.pk_last = pk
+        elif model_type=='GAT':
+            if not self.pk_last:
+                with torch.no_grad():
+                    pk = torch.cat([att.W for att in self.model.attentions], dim=1)
+                    pk=torch.mm(pk,self.model.out_att.W)
+                    pk = np.linalg.norm(pk.numpy(), ord=2)
+                    self.pk_last = pk
+            else:
+                with torch.no_grad():
+                    pk = torch.cat([att.W for att in self.model.attentions], dim=1)
+                    pk=torch.mm(pk,self.model.out_att.W)
+                    pk = np.linalg.norm(pk.numpy(), ord=2)
+                    if epoch != 0:
+                        if pk > 1.1 * self.pk_last:
+                            if self.m > self.benefit_m:
+                                self.m -= int(self.m*0.2)
+                            else:
+                                self.m = 1
+                        elif pk < self.pk_last:
+                            self.m += int(self.m*0.2)
+                    self.pk_last = pk
         else:
-            pk = self.model.gc[1].weight.tensor
-            for i in range(2, context.glContext.config['layer_num'] + 1):
-                pk = pk.mm(self.model.gc[i].weight.tensor)
-            pk = np.linalg.norm(pk, ord=2)
-            if epoch != 0:
-                if pk > 1.1 * self.pk_last:
-                    if self.m > self.benefit_m:
-                        self.m -= int(self.m*0.2)
-                    else:
-                        self.m = 1
-                elif pk < self.pk_last:
-                    self.m += int(self.m*0.2)
-
-            # print(pk, self.m)
-            self.pk_last = pk
+            exit('no such model type')
 
     def sample(self, fan_out, epoch, batch_size, **kwargs):
         """
@@ -114,10 +141,36 @@ class AggDiff(Sample):
             self.m_sum+=self.m
             evaluator.m_change.append(self.m)
             if self.enab_adap_m:
-                self.adapMTuner(epoch)
+                self.adapMTuner(epoch,kwargs['model_type'])
 
         return context.glContext.graph_sample
 
+    def sample_local(self, fan_out, epoch, batch_size, **kwargs):
+        """
+        :param graph: m(int), sampling interval
+        :return:
+        """
+        self.initParameter(epoch, fan_out, kwargs)
+        self.setM(epoch)
+        if epoch==0:
+            context.glContext.sample.buildRmtAndLocAdj()
+
+        if epoch == self.m_sum or self.m==1:
+            return context.glContext.graph_full
+        elif epoch==self.m_sum+1:  # last_round_ad has been updated as the 0-th epoch of the new mgroup
+            time_counter.start('sample_generateAggEmb')
+            self.generateAggEmb()
+            time_counter.end('sample_generateAggEmb')
+            context.glContext.sample.adSample_local(fan_out,self.dim_itvs,self.adcomp_num,self.enable_pc,self.comm_fo,self.nei_prune)
+            transGraphCppToPython("train", "sample")
+
+        if epoch==self.m_sum+self.m-1 or self.m==1:
+            self.m_sum+=self.m
+            evaluator.m_change.append(self.m)
+            if self.enab_adap_m:
+                self.adapMTuner(epoch,kwargs['model_type'])
+
+        return context.glContext.graph_sample
 
     def sample_every(self, fan_out, epoch, batch_size, **kwargs):
         """
@@ -154,8 +207,8 @@ class AggDiff(Sample):
         if comp_graph.right is not None:
             queue.append(comp_graph.right)
         if comp_graph.operator == 'spmm':
-            self.agg_emb['nei_embs' + str(layer_count)] = comp_graph.right.tensor.detach().numpy()
-            self.agg_emb['agg_embs' + str(layer_count)] = comp_graph.tensor.detach().numpy()
+            self.agg_emb['nei_embs' + str(layer_count)] = comp_graph.right.tensor.cpu().detach().numpy()
+            self.agg_emb['agg_embs' + str(layer_count)] = comp_graph.tensor.cpu().detach().numpy()
             layer_count -= 1
         if len(queue) != 0:
             next_root = queue.pop(0)

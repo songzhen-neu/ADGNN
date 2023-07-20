@@ -2,6 +2,7 @@ import adgnn
 import torch.nn.functional as F
 import torch
 from adgnn.context import context
+import torch.nn as nn
 
 
 def set_requires_grad(root, left, right):
@@ -82,6 +83,8 @@ def log_softmax(x1, dim):
 
 
 def nll_loss(x1, lab):
+    if context.glContext.config['device']!='cpu':
+        lab.tensor=lab.tensor.cuda()
     loss = F.nll_loss(x1.tensor, lab.tensor)
     loss = adgnn.ECTensor(loss, x1, lab, 'nllloss', None)
     if context.glContext.is_train:
@@ -104,6 +107,61 @@ def add(x1, x2):
 
 
 
+def cat(x1,x2,dim=0):
+    x_result = torch.cat((x1.tensor,x2.tensor),dim=dim)
+    x_result = adgnn.ECTensor(x_result, x1, x2, 'cat', None)
+    if context.glContext.is_train:
+        set_requires_grad(x_result, x1, x2)
+        x1.root = x_result
+        x2.root = x_result
+        context.glContext.compGraph = x_result
+    return x_result
 
 
+def exp_neg(x1):
+    x_result = torch.exp(-x1.tensor)
+    x_result = adgnn.ECTensor(x_result, x1, None, 'exp_neg', None)
+    if context.glContext.is_train:
+        set_requires_grad(x_result, x1,None)
+        x1.root = x_result
+        context.glContext.compGraph = x_result
+    return x_result
+
+
+def leakyrelu(x1,alpha):
+    leakyrelu_f = nn.LeakyReLU(alpha)
+    x_result=leakyrelu_f(x1)
+    x_result = adgnn.ECTensor(x_result, x1, None, 'leakyrelu', None)
+    if context.glContext.is_train:
+        set_requires_grad(x_result, x1,None)
+        x1.root = x_result
+        context.glContext.compGraph = x_result
+    return x_result
+
+def div(x1,x2):
+    x_result = x1.tensor.div(x2.tensor)
+    x_result = adgnn.ECTensor(x_result, x1, x2, 'div', None)
+    if context.glContext.is_train:
+        set_requires_grad(x_result, x1,x2)
+        x1.root = x_result
+        context.glContext.compGraph = x_result
+    return x_result
+
+def elu(x1):
+    x_result = F.elu(x1.tensor)
+    x_result = adgnn.ECTensor(x_result, x1, None, 'elu', None)
+    if context.glContext.is_train:
+        set_requires_grad(x_result, x1,None)
+        x1.root = x_result
+        context.glContext.compGraph = x_result
+    return x_result
+
+def cat_edge(h,edge,dim=0):
+    x_result = torch.cat((h.tensor[edge[0, :], :], h.tensor[edge[1, :], :]),dim=dim)
+    x_result = adgnn.ECTensor(x_result, h, None, 'cat_edge', None)
+    if context.glContext.is_train:
+        set_requires_grad(x_result, h, None)
+        h.root = x_result
+        context.glContext.compGraph = x_result
+    return x_result
 

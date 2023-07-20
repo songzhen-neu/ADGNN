@@ -4,6 +4,7 @@ from adgnn.context import context
 from cmake.build.lib.pb11_ec import *
 from adgnn.util_python.timecounter import time_counter
 
+
 # f means former, l means latter;
 # e.g., mm: xl=xf.mm(wf)
 
@@ -21,11 +22,9 @@ def MmBackward_spmm(xf, wf, xl_g, flag):
         return torch.spmm(xf.t(), xl_g)
 
 
-
-
 def NllLossBackward(xf, lab, idx_train, train_num):
     g_x = torch.zeros_like(xf)
-    g_x[idx_train,lab]=-1
+    g_x[idx_train, lab] = -1
     g_x = g_x / train_num
     return g_x
 
@@ -35,9 +34,10 @@ def LogSoftmaxBackward(xf_softmax, xl_g):
     # x1_g = np.zeros_like(xf_softmax)
     # size_0 = len(xf_softmax)
     # size_1 = len(xf_softmax[0])
-    index = torch.nonzero(xl_g).numpy()
-    x1_g=-xf_softmax
-    x1_g[index[:,0],index[:,1]]+=1
+    # index = torch.nonzero(xl_g).numpy()
+    index = torch.nonzero(xl_g)
+    x1_g = -xf_softmax
+    x1_g[index[:, 0], index[:, 1]] += 1
 
     # for m in range(len(index)):
     #     i = index[m][0]
@@ -48,8 +48,8 @@ def LogSoftmaxBackward(xf_softmax, xl_g):
     #         else:
     #             x1_g[i][k] += -xf_softmax[i][k]
 
-    x1_g = torch.FloatTensor(x1_g)
-    x2_g = xl_g.mm(torch.ones(xl_g.size()[1], 1))
+    # x1_g = torch.FloatTensor(x1_g)
+    x2_g = xl_g.mm(torch.ones(xl_g.size()[1], 1).to(context.glContext.config['device']))
     x1_g = x1_g * x2_g
     return x1_g
 
@@ -72,29 +72,35 @@ def LeakyReluBackward0(xf, xl_g, alpha):
     return x_g * xl_g
 
 
+def EluBackward(xf, xl_g):
+    exp_z_mulg = torch.exp(xf).__mul__(xl_g)
+    return torch.where(xf > 0, xl_g, exp_z_mulg)
+
+
 def AddBackward(xl_g, ifbias):
     if ifbias:
-        return xl_g.detach().numpy().sum(axis=0)
+        return xl_g.detach().sum(axis=0)
+        # return torch.tensor(xl_g.detach().numpy().sum(axis=0))
     else:
         return xl_g
 
 
-def GetEmbsBackward(xl_g,layer_id):
+def GetEmbsBackward(xl_g, layer_id):
     # transfer all data to c++ backend
-    emb_grad=context.glContext.dgnnClientRouterForCpp.setAndSendG(
+    emb_grad = context.glContext.dgnnClientRouterForCpp.setAndSendG(
         layer_id,
         xl_g.detach().numpy()
     )
     return torch.FloatTensor(emb_grad)
 
 
-def PushEmbsBackward(xl_g,layer_id):
+def PushEmbsBackward(xl_g, layer_id):
     # transfer all data to c++ backend
-    emb_grad=context.glContext.dgnnClientRouterForCpp.setAndSendG(
+    emb_grad = context.glContext.dgnnClientRouterForCpp.setAndSendG(
         layer_id,
-        xl_g.detach().numpy()
+        xl_g.cpu().detach().numpy()
     )
-    return torch.FloatTensor(emb_grad)
+    return torch.FloatTensor(emb_grad).to(context.glContext.config['device'])
 
 
 def setUpdateGrad(node):
@@ -173,16 +179,22 @@ def compLeft(node):
             node.left.grad = node.backwardF(node.left.tensor, node.grad, node.leaky_alpha)
             setUpdateGrad(node.left)
             time_counter.end('Backward_leakyrelu')
+    elif node.operator == 'elu':
+        if node.left is not None:
+            time_counter.start('Backward_elu')
+            node.left.grad = node.backwardF(node.left.tensor, node.grad)
+            setUpdateGrad(node.left)
+            time_counter.end('Backward_elu')
     elif node.operator == 'get_embs':
         if node.left is not None:
             time_counter.start('Backward_getembs')
-            node.left.grad = node.backwardF(node.grad,node.layer_id)
+            node.left.grad = node.backwardF(node.grad, node.layer_id)
             setUpdateGrad(node.left)
             time_counter.end('Backward_getembs')
     elif node.operator == 'push_embs':
         if node.left is not None:
             time_counter.start('Backward_pushembs')
-            node.left.grad = node.backwardF(node.grad,node.layer_id)
+            node.left.grad = node.backwardF(node.grad, node.layer_id)
             setUpdateGrad(node.left)
             time_counter.end('Backward_pushembs')
     elif node.operator == 'add':

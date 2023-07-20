@@ -37,6 +37,8 @@ class ECTensor(object):
             self.backwardF = BackWard.GetEmbsBackward
         elif operator == 'push_embs':
             self.backwardF = BackWard.PushEmbsBackward
+        elif operator=='elu':
+            self.backwardF = BackWard.EluBackward
         elif operator is None:
             self.isLeaf = True
 

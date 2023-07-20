@@ -52,6 +52,8 @@ PYBIND11_MODULE(pb11_ec, m) {
             .def("randomSampleNoRebuild",&Sample::randomSampleNoRebuild)
             .def("adSample",&Sample::adSample)
             .def("bnsSample",&Sample::bnsSample)
+            .def("adSample_local",&Sample::adSample_local)
+//            .def("fosSample",&Sample::fosSample)
             .def("buildRmtAndLocAdj",&Sample::buildRmtAndLocAdj)
             .def("clustergcnSample",&Sample::clustergcnSample)
             .def("fastgcnSample",&Sample::fastgcnSample)

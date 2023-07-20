@@ -29,8 +29,9 @@ condition_variable ThreadUtil::cv_accuracy;
 
 mutex ThreadUtil::mtx_barrier;
 condition_variable ThreadUtil::cv_barrier;
-
 int ThreadUtil::count_worker_for_barrier;
+
+
 
 mutex ThreadUtil::mtx_updateModels;
 condition_variable ThreadUtil::cv_updateModels;

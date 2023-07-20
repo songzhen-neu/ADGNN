@@ -49,6 +49,10 @@ public:
     static string sample_method;
     static string partition_method;
 
+    // FOS: including different layers
+    static unordered_map<int,vector<int>> start_indices;
+    static unordered_map<int,int> range_size;
+
 
 
 
@@ -93,6 +97,9 @@ public:
     static Graph graph_sampled;
 
     static unordered_map<string,unordered_map<int,unordered_set<int>>> loc_rmt_adj;
+
+    static double sample_time;
+    static double construction_time;
 
 
 

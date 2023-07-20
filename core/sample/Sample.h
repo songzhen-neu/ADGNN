@@ -17,13 +17,16 @@ public:
     static unordered_set<int> nei_set_pc;
 
 
+
     void initSampledGraph();
     void randomSample(vector<int>& fanout);
     void randomSampleNoRebuild(vector<int>& fanout);
     void adSample(vector<int>& fanout,vector<int>& dim_itvs,int adcomp_num,bool enable_pc,vector<int>& comm_fo,int nei_prune);
+    void adSample_local(vector<int>& fanout,vector<int>& dim_itvs,int adcomp_num,bool enable_pc,vector<int>& comm_fo,int nei_prune);
     void bnsSample(vector<int>& fanout);
     void clustergcnSample(unordered_set<int>& nei_set_sampled);
     void fastgcnSample(vector<int>& fanout);
+//    void fosSample(vector<int>& fanout);
 
     void buildRmtAndLocAdj();
 

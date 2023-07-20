@@ -35,24 +35,24 @@ void Router::initServerRouter(map<int, string> &dgnnServerAddress) {
 }
 
 
-py::array_t<float> Router::getRemoteEmb(int layerId, const string &status, int feat_num, const string& graph_mode) {
-    Graph* graph;
-    if(graph_mode=="full"){
-        graph=&WorkerStore::graph;
-    }else{
-        graph=&WorkerStore::graph_sampled;
+py::array_t<float> Router::getRemoteEmb(int layerId, const string &status, int feat_num, const string &graph_mode) {
+    Graph *graph;
+    if (graph_mode == "full") {
+        graph = &WorkerStore::graph;
+    } else {
+        graph = &WorkerStore::graph_sampled;
     }
-    auto& subgraph=graph->subgraphs[status];
+    auto &subgraph = graph->subgraphs[status];
     int workerNum = WorkerStore::worker_num;
     int localId = WorkerStore::worker_id;
     vector<EmbGradMessage> replyVec(workerNum);
 
-    auto nodes =subgraph.graphlayers[layerId].wk2nei_pull;
+    auto nodes = subgraph.graphlayers[layerId].wk2nei_pull;
 //    auto nodes = WorkerStore::fsthop_for_worker[status][layerId];
     int totalNodeNum = 0;
-    auto& layer=graph->subgraphs[status].graphlayers[layerId];
+    auto &layer = graph->subgraphs[status].graphlayers[layerId];
 
-    int local_vertex_num=layer.vnum_tarv_locnei_rmtnei[0]+layer.vnum_tarv_locnei_rmtnei[1];
+    int local_vertex_num = layer.vnum_tarv_locnei_rmtnei[0] + layer.vnum_tarv_locnei_rmtnei[1];
     totalNodeNum = (int) layer.o2n_map.size() -
                    local_vertex_num; // TODO check this place
     vector<pthread_t> pthreads(WorkerStore::worker_num);
@@ -70,7 +70,7 @@ py::array_t<float> Router::getRemoteEmb(int layerId, const string &status, int f
     for (int i = 0; i < workerNum; i++) {
         if (i != localId) {
 //            pthread_t p;
-            auto* metaData = new ReqEmbsMetaData;
+            auto *metaData = new ReqEmbsMetaData;
             metaData->reply = &replyVec[i];
             metaData->serverId = i;
             metaData->workerId = localId;
@@ -79,7 +79,7 @@ py::array_t<float> Router::getRemoteEmb(int layerId, const string &status, int f
             metaData->dgnnClient = dgnnWorkerRouter[i];
             metaData->ptr_result = ptr_result;
             metaData->oldToNewMap = &layer.o2n_map;
-            metaData->localNodeSize =local_vertex_num;
+            metaData->localNodeSize = local_vertex_num;
             metaData->feat_num = feat_num;
             metaData->status = status;
             pthread_create(&pthreads[i], NULL, DGNNClient::worker_pull_needed_emb_parallel, (void *) metaData);
@@ -107,17 +107,16 @@ vector<vector<float>> initGradTmp(int node_num, int dim_num) {
     return grad_tmp;
 }
 
-py::array_t<float> Router::setAndSendG(int layer_id, const py::array_t<float>& emb_grads) {
+py::array_t<float> Router::setAndSendG(int layer_id, const py::array_t<float> &emb_grads) {
 
-    auto graph_mode=WorkerStore::graph_mode;
+    auto graph_mode = WorkerStore::graph_mode;
     Graph *graph;
-    if(graph_mode=="full"){
-        graph=&WorkerStore::graph;
-    }else{
-        graph=&WorkerStore::graph_sampled;
+    if (graph_mode == "full") {
+        graph = &WorkerStore::graph;
+    } else {
+        graph = &WorkerStore::graph_sampled;
     }
-    auto &subgraph=graph->subgraphs["train"];
-
+    auto &subgraph = graph->subgraphs["train"];
 
     py::buffer_info buf = emb_grads.request();
     if (buf.ndim != 2) {
@@ -128,9 +127,19 @@ py::array_t<float> Router::setAndSendG(int layer_id, const py::array_t<float>& e
     int feat_size = buf.shape[1];
 
 
-    int local_node_num = subgraph.graphlayers[layer_id].vnum_tarv_locnei_rmtnei[0]+ subgraph.graphlayers[layer_id].vnum_tarv_locnei_rmtnei[1];
-    int local_train_node_num = subgraph.graphlayers[layer_id-1].vnum_tarv_locnei_rmtnei[0];
+//    cout<<layer_id<<endl;
+//    cout<<subgraph.graphlayers[2].vnum_tarv_locnei_rmtnei.size()<<endl;
+//    cout<<subgraph.graphlayers[1].vnum_tarv_locnei_rmtnei.size()<<endl;
+//    cout<<subgraph.graphlayers[0].vnum_tarv_locnei_rmtnei.size()<<endl;
+//    cout<<subgraph.graphlayers[layer_id-1].vnum_tarv_locnei_rmtnei.size()<<endl;
+//    cout<<subgraph.graphlayers[layer_id-1].vnum_tarv_locnei_rmtnei[0]<<','<<subgraph.graphlayers[layer_id-1].vnum_tarv_locnei_rmtnei[1]<<endl;
+//    cout<<"aaaaaaaaaaaaaa"<<endl;
+    int local_node_num = subgraph.graphlayers[layer_id].vnum_tarv_locnei_rmtnei[0] +
+                         subgraph.graphlayers[layer_id].vnum_tarv_locnei_rmtnei[1];
 
+
+//    cout<<subgraph.graphlayers[layer_id-1].vnum_tarv_locnei_rmtnei.size()<<endl;
+    int local_train_node_num = subgraph.graphlayers[layer_id - 1].vnum_tarv_locnei_rmtnei[0];
 
 
 //    int local_node_num = WorkerStore::local_vertex_num["train"][layer_id];
@@ -139,8 +148,8 @@ py::array_t<float> Router::setAndSendG(int layer_id, const py::array_t<float>& e
     vector<pthread_t> pthreads(WorkerStore::worker_num);
 
 
-    auto& n2o_map_cur=subgraph.graphlayers[layer_id].n2o_map;
-    auto& o2n_map_last=subgraph.graphlayers[layer_id-1].o2n_map;
+    auto &n2o_map_cur = subgraph.graphlayers[layer_id].n2o_map;
+    auto &o2n_map_last = subgraph.graphlayers[layer_id - 1].o2n_map;
 //    auto n2o_map_cur=WorkerStore::new2old_map["train"][layer_id];
 //    auto o2n_map_last=WorkerStore::old2new_map["train"][layer_id - 1];
 
@@ -149,7 +158,7 @@ py::array_t<float> Router::setAndSendG(int layer_id, const py::array_t<float>& e
     vector<EmbGradMessage> embgrad_message_vec(WorkerStore::worker_num);
 
 
-    for(int i=0;i<WorkerStore::worker_num;i++){
+    for (int i = 0; i < WorkerStore::worker_num; i++) {
         embgrad_message_vec[i].set_featsize(feat_size);
         embgrad_message_vec[i].set_layerid(layer_id);
         embgrad_message_vec[i].set_graph_mode(graph_mode);
@@ -161,24 +170,23 @@ py::array_t<float> Router::setAndSendG(int layer_id, const py::array_t<float>& e
         if (i < local_node_num) {
             int old_id = n2o_map_cur[i];
             int new_id = o2n_map_last[old_id];
-            float* grad_tmp_ptr=&grad_tmp[new_id][0];
-            copy(ptr+i*feat_size,ptr+(i+1)*feat_size,grad_tmp_ptr);
+            float *grad_tmp_ptr = &grad_tmp[new_id][0];
+            copy(ptr + i * feat_size, ptr + (i + 1) * feat_size, grad_tmp_ptr);
         } else {
             int old_id = n2o_map_cur[i];
             int wid = WorkerStore::graph.v2wk[old_id];
             embgrad_message_vec[wid].add_nodes(old_id);
-            embgrad_message_vec[wid].mutable_embs()->Add(ptr+i*feat_size,ptr+(i+1)*feat_size);
+            embgrad_message_vec[wid].mutable_embs()->Add(ptr + i * feat_size, ptr + (i + 1) * feat_size);
         }
     }
 
     WorkerStore::local_emb_grad_agg[layer_id] = grad_tmp;
     dgnnServerRouter[0]->server_Barrier();
 
-
     for (int i = 0; i < WorkerStore::worker_num; i++) {
         if (i != WorkerStore::worker_id) {
 //            pthread_t p;
-            auto* metaData = new ReqEmbsMetaData;
+            auto *metaData = new ReqEmbsMetaData;
             metaData->embGradMessage = &embgrad_message_vec[i];
             metaData->dgnnClient = dgnnWorkerRouter[i];
             pthread_create(&pthreads[i], NULL, DGNNClient::worker_pull_g_parallel, (void *) metaData);
@@ -189,6 +197,7 @@ py::array_t<float> Router::setAndSendG(int layer_id, const py::array_t<float>& e
 
     dgnnServerRouter[0]->server_Barrier();
 
+
     // return the aggregate of local_emb_grad
     // the order follows the old2new_map of layer_id
     auto result = py::array_t<float>(local_train_node_num * feat_size);
@@ -196,11 +205,13 @@ py::array_t<float> Router::setAndSendG(int layer_id, const py::array_t<float>& e
     py::buffer_info buf_result = result.request();
     float *ptr_result = (float *) buf_result.ptr;
     for (int i = 0; i < local_train_node_num; i++) {
-        copy(WorkerStore::local_emb_grad_agg[layer_id][i].begin(),WorkerStore::local_emb_grad_agg[layer_id][i].end(),ptr_result+i*feat_size);
+        copy(WorkerStore::local_emb_grad_agg[layer_id][i].begin(), WorkerStore::local_emb_grad_agg[layer_id][i].end(),
+             ptr_result + i * feat_size);
 //        for (int j = 0; j < dim_num; j++) {
 //            ptr_result[i * dim_num + j] = WorkerStore::local_emb_grad_agg[layer_id][i][j];
 //        }
     }
+
 
     return result;
 
@@ -213,7 +224,7 @@ py::array_t<long> Router::sendNodes2Wk(int layer_id, map<int, vector<int>> &nei2
     for (int i = 0; i < WorkerStore::worker_num; i++) {
         if (WorkerStore::worker_id != i) {
 //            pthread_t p;
-            auto* metaData = new ReqEmbsMetaData;
+            auto *metaData = new ReqEmbsMetaData;
             metaData->dgnnClient = dgnnWorkerRouter[i];
             metaData->layerId = layer_id;
             metaData->nodes = &nei2wk_4lay[i];
@@ -236,9 +247,9 @@ py::array_t<long> Router::sendNodes2Wk(int layer_id, map<int, vector<int>> &nei2
 void
 Router::getRmtFeat(const string &status) {
 
-    auto& graphlayer1=WorkerStore::graph.subgraphs[status].graphlayers[1];
+    auto &graphlayer1 = WorkerStore::graph.subgraphs[status].graphlayers[1];
     vector<EmbGradMessage> replyVec(WorkerStore::worker_num);
-    auto& subgraph= WorkerStore::graph.subgraphs[status];
+    auto &subgraph = WorkerStore::graph.subgraphs[status];
     int totalNodeNum = graphlayer1.vnum_tarv_locnei_rmtnei[2];
 //    int totalNodeNum = WorkerStore::rmt_nei_num[status][1];
 
@@ -247,26 +258,24 @@ Router::getRmtFeat(const string &status) {
     int feat_size = WorkerStore::feat_size;
     int worker_num = WorkerStore::worker_num;
     int local_id = WorkerStore::worker_id;
-    auto old_2_new =graphlayer1.o2n_map;
+    auto old_2_new = graphlayer1.o2n_map;
 
 //    int local_size = WorkerStore::local_vertex_num[status][1];
-    int local_size=graphlayer1.vnum_tarv_locnei_rmtnei[0]+graphlayer1.vnum_tarv_locnei_rmtnei[1];
-    auto& remote = graphlayer1.wk2nei_pull;
+    int local_size = graphlayer1.vnum_tarv_locnei_rmtnei[0] + graphlayer1.vnum_tarv_locnei_rmtnei[1];
+    auto &remote = graphlayer1.wk2nei_pull;
     vector<pthread_t> pthreads(WorkerStore::worker_num);
-
-
 
 
     for (int i = 0; i < worker_num; i++) {
         if (i != local_id) {
 //            pthread_t p;
-            auto* metaData = new ReqEmbsMetaData;
+            auto *metaData = new ReqEmbsMetaData;
             metaData->reply = &replyVec[i];
             metaData->nei_set = &remote[i];
             metaData->dgnnClient = dgnnWorkerRouter[i];
             metaData->oldToNewMap = &old_2_new;
             metaData->feat_num = feat_size;
-            metaData->thread_id=i;
+            metaData->thread_id = i;
 
             pthread_create(&pthreads[i], NULL, DGNNClient::getRmtFeat, (void *) metaData);
         }
@@ -279,16 +288,17 @@ Router::getRmtFeat(const string &status) {
 
 }
 
-unordered_map<int, unordered_set<int>>& Router::sendInNodes2WK(int layer_id, unordered_map<int, unordered_set<int>> &to_remote_nei) {
+unordered_map<int, unordered_set<int>> &
+Router::sendInNodes2WK(int layer_id, unordered_map<int, unordered_set<int>> &to_remote_nei) {
     vector<pthread_t> pthreads(WorkerStore::worker_num);
     for (int i = 0; i < WorkerStore::worker_num; i++) {
-        if (i!=WorkerStore::worker_id ) {
-            auto* metaData = new ReqEmbsMetaData;
+        if (i != WorkerStore::worker_id) {
+            auto *metaData = new ReqEmbsMetaData;
             metaData->dgnnClient = dgnnWorkerRouter[i];
             metaData->layerId = layer_id;
             metaData->nei_set = &to_remote_nei[i];
             metaData->workerId = WorkerStore::worker_id;
-            metaData->thread_id=i;
+            metaData->thread_id = i;
             pthread_create(&pthreads[i], NULL, DGNNClient::sendInNodes2WK, (void *) metaData);
         }
     }
@@ -299,22 +309,23 @@ unordered_map<int, unordered_set<int>>& Router::sendInNodes2WK(int layer_id, uno
     return WorkerStore::neis_in_neededby_otherwk;
 }
 
-py::array_t<float> Router::pushEmbs(int layer_id, const string &status,const string& graph_mode, py::array_t<float> &embs) {
+py::array_t<float>
+Router::pushEmbs(int layer_id, const string &status, const string &graph_mode, py::array_t<float> &embs) {
     // layer_id starts from 1
     // embs belong to layer 0, when layer_id=1
 
     Graph *graph;
-    if(graph_mode=="full"){
-        graph=&WorkerStore::graph;
-    }else{
-        graph=&WorkerStore::graph_sampled;
+    if (graph_mode == "full") {
+        graph = &WorkerStore::graph;
+    } else {
+        graph = &WorkerStore::graph_sampled;
     }
-    auto& subgraph=graph->subgraphs[status];
+    auto &subgraph = graph->subgraphs[status];
 
 //    auto& old2new_map = WorkerStore::old2new_map[status][layer_id - 1];
-    auto& o2n_map_last = subgraph.graphlayers[layer_id-1].o2n_map;
+    auto &o2n_map_last = subgraph.graphlayers[layer_id - 1].o2n_map;
 
-    auto& push2wk_nodes_4lay=subgraph.graphlayers[layer_id-1].wk2nei_push;
+    auto &push2wk_nodes_4lay = subgraph.graphlayers[layer_id - 1].wk2nei_push;
 
 //    auto& push2wk_nodes_4lay = WorkerStore::push_2_worker_nodes[status][layer_id - 1];
     auto buffer = embs.request();
@@ -331,7 +342,7 @@ py::array_t<float> Router::pushEmbs(int layer_id, const string &status,const str
 
 //    WorkerStore::emb_reply_4push = py::array_t<float>(nei_num * emb_dim);
 
-    WorkerStore::emb_reply_4push_ptr=(float *) malloc(sizeof(float)*nei_num*emb_dim);
+    WorkerStore::emb_reply_4push_ptr = (float *) malloc(sizeof(float) * nei_num * emb_dim);
 
 
 
@@ -345,7 +356,7 @@ py::array_t<float> Router::pushEmbs(int layer_id, const string &status,const str
     vector<pthread_t> pthreads(WorkerStore::worker_num);
     for (int i = 0; i < WorkerStore::worker_num; i++) {
         if (WorkerStore::worker_id != i) {
-            auto* metaData =  new ReqEmbsMetaData;
+            auto *metaData = new ReqEmbsMetaData;
             metaData->dgnnClient = dgnnWorkerRouter[i];
             metaData->nei_set_unorder = &push2wk_nodes_4lay[i];
             metaData->oldToNewMap = &o2n_map_last;
@@ -353,7 +364,7 @@ py::array_t<float> Router::pushEmbs(int layer_id, const string &status,const str
             metaData->feat_num = emb_dim;
             metaData->layerId = layer_id;
             metaData->status = status;
-            metaData->graph_mode=graph_mode;
+            metaData->graph_mode = graph_mode;
             pthread_create(&pthreads[i], NULL, DGNNClient::pushEmbsParallel, (void *) metaData);
         }
     }
@@ -365,28 +376,28 @@ py::array_t<float> Router::pushEmbs(int layer_id, const string &status,const str
 
 
     // fill local neighbor and target_v
-    auto& target_v=subgraph.graphlayers[layer_id].target_v;
-    auto& loc_nei=subgraph.graphlayers[layer_id].wk2nei_pull[WorkerStore::worker_id];
+    auto &target_v = subgraph.graphlayers[layer_id].target_v;
+    auto &loc_nei = subgraph.graphlayers[layer_id].wk2nei_pull[WorkerStore::worker_id];
 
-    auto& o2n_map_cur=subgraph.graphlayers[layer_id].o2n_map;
-
-
-    auto result= py::array_t<float>(nei_num*emb_dim);
-    auto* result_ptr = (float *)result.request().ptr;
-    copy(WorkerStore::emb_reply_4push_ptr,WorkerStore::emb_reply_4push_ptr+emb_dim*nei_num,result_ptr);
+    auto &o2n_map_cur = subgraph.graphlayers[layer_id].o2n_map;
 
 
-    for(auto id : target_v){
-        auto nid=o2n_map_cur[id];
-        auto nid_last=o2n_map_last[id];
-        copy(emb_ptr+emb_dim*nid_last,emb_ptr+emb_dim*(nid_last+1),result_ptr+emb_dim*nid);
+    auto result = py::array_t<float>(nei_num * emb_dim);
+    auto *result_ptr = (float *) result.request().ptr;
+    copy(WorkerStore::emb_reply_4push_ptr, WorkerStore::emb_reply_4push_ptr + emb_dim * nei_num, result_ptr);
+
+
+    for (auto id : target_v) {
+        auto nid = o2n_map_cur[id];
+        auto nid_last = o2n_map_last[id];
+        copy(emb_ptr + emb_dim * nid_last, emb_ptr + emb_dim * (nid_last + 1), result_ptr + emb_dim * nid);
     }
 
 
-    for(auto id : loc_nei){
-        auto nid=o2n_map_cur[id];
-        auto nid_last=o2n_map_last[id];
-        copy(emb_ptr+emb_dim*nid_last,emb_ptr+emb_dim*(nid_last+1),result_ptr+emb_dim*nid);
+    for (auto id : loc_nei) {
+        auto nid = o2n_map_cur[id];
+        auto nid_last = o2n_map_last[id];
+        copy(emb_ptr + emb_dim * nid_last, emb_ptr + emb_dim * (nid_last + 1), result_ptr + emb_dim * nid);
     }
 
 
@@ -412,7 +423,7 @@ map<int, vector<int>> divideNodesToWk4Push(const vector<int> &nodes, const strin
         push2eachwk_nodes.insert(pair<int, vector<int>>(i, tmp));
     }
 
-    auto v2wk_map = WorkerStore::v2wk_push[status][layer_id-1];
+    auto v2wk_map = WorkerStore::v2wk_push[status][layer_id - 1];
     for (auto id : nodes) {
         auto worker_ids = v2wk_map[id];
         for (auto wid:worker_ids) {
@@ -484,14 +495,14 @@ void Router::pushEmbsByIds(int layer_id, int batch_id, const string &status, con
 }
 
 
-void Router::initReplyEmbs(const string &status, int layer_id, int emb_dim, int batch_num, const string& graph_mode) {
+void Router::initReplyEmbs(const string &status, int layer_id, int emb_dim, int batch_num, const string &graph_mode) {
     Graph *graph;
-    if(graph_mode=="full"){
-        graph=&WorkerStore::graph;
-    }else{
-        graph=&WorkerStore::graph_sampled;
+    if (graph_mode == "full") {
+        graph = &WorkerStore::graph;
+    } else {
+        graph = &WorkerStore::graph_sampled;
     }
-    auto& subgraph=graph->subgraphs[status];
+    auto &subgraph = graph->subgraphs[status];
     int rmt_nei_num = subgraph.graphlayers[layer_id].vnum_tarv_locnei_rmtnei[2];
     WorkerStore::emb_reply_4push_ptr = new float[rmt_nei_num * emb_dim];
 
@@ -502,11 +513,11 @@ void Router::initReplyEmbs(const string &status, int layer_id, int emb_dim, int 
     metadata_pipe = req_tmp;
 
     for (int i = 0; i < batch_num; i++) {
-        auto meta_tmp=new vector<ReqEmbsMetaData>(WorkerStore::worker_num);
+        auto meta_tmp = new vector<ReqEmbsMetaData>(WorkerStore::worker_num);
         metadata_pipe[i] = *meta_tmp;
 
-        auto pthread_tmp=new vector<pthread_t>(WorkerStore::worker_num);
-        ThreadUtil::pthread_vec[i]=*pthread_tmp;
+        auto pthread_tmp = new vector<pthread_t>(WorkerStore::worker_num);
+        ThreadUtil::pthread_vec[i] = *pthread_tmp;
     }
 
 }

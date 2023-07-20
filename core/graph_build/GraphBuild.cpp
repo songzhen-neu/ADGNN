@@ -96,6 +96,12 @@ void GraphBuild::updateGraphLayer(SubGraph &subgraph, int lid) {
 
     auto &target_v_tmp = subgraph.graphlayers[lid].target_v;
     auto &adj = subgraph.graphlayers[lid].adj;
+
+//    for(auto &neis:adj){
+//        if(neis.second.empty()){
+//            neis.second.insert(neis.first);
+//        }
+//    }
     auto wk2nei_map = getSplitedNeiSet(target_v_tmp, adj, subgraph.graphlayers[lid]);
 
 
@@ -396,6 +402,8 @@ void encodeLocalV(const string &status, Graph &graph) {
 
 }
 
+
+
 void buildLabel(const string &status, Graph &graph) {
     auto &subgraph = graph.subgraphs[status];
     auto &label = subgraph.graphlayers[WorkerStore::layer_num].label;
@@ -463,12 +471,13 @@ GraphBuild::transEdgeToNewID(const string &status, const string &graph_mode, int
 }
 
 
+
+
 void buildSubGraph(const string &status, Graph &graph) {
     // graphlayer: o2n_map, n2o_map
     encodeLocalV(status, graph);
     // graphlayer: label
     buildLabel(status, graph);
-
 }
 
 
@@ -604,6 +613,9 @@ void GraphBuild::buildGraphForSample() {
     evalSubGraph(WorkerStore::graph_sampled.subgraphs["train"],"sample");
 }
 
+
+
+
 void GraphBuild::buildInitGraph() {
     // adj4layers is for sampling mode
 //    for (int i = 0; i < WorkerStore::layer_num + 1; i++) {
@@ -640,6 +652,7 @@ void GraphBuild::printGraphInfo(){
         cout<<"***********************"<<id.first<<"***************"<<endl;
         cout<<id.second<<endl;
     }
+    cout<<"graph_sample time: "<<WorkerStore::sample_time<<" s ,"<<"construction time: "<<WorkerStore::construction_time<<" s"<<endl;
 }
 
 

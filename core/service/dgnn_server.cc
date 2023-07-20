@@ -361,23 +361,17 @@ void barrier_update() {
     }
 }
 
+
 Status ServiceImpl::server_updateParam(ServerContext *context, const ParamGrad *request, NullMessage *reply) {
     if (request->wid() == 0) {
-//        unique_lock<mutex> lck(ThreadUtil::mtx_updateModels);
         ServerStore::grads_agg[request->id()].clear();
         // vector is initialized as 0 by default
         vector<double> tmp(request->elems_size());
         ServerStore::grads_agg[request->id()] = tmp;
         cout << "********server_updateModels-clear gradient aggregations******" << endl;
-//        ThreadUtil::ready_updateModels = true;
-//        ThreadUtil::cv_updateModels.notify_all();
+
     }
-//    } else {
-//        unique_lock<mutex> lck(ThreadUtil::mtx_updateModels);
-//        while (!ThreadUtil::ready_updateModels) {
-//            ThreadUtil::cv_updateModels.wait(lck);
-//        }
-//    }
+
 
     barrier_update();
 
@@ -413,7 +407,9 @@ Status ServiceImpl::server_updateParam(ServerContext *context, const ParamGrad *
 
 
     if (wid == 0) {
+
         ServerStore::t[grad_id]++;
+
         float beta_1 = 0.9;
         float beta_2 = 0.999;
         float epsilon = 1e-8;
@@ -423,7 +419,6 @@ Status ServiceImpl::server_updateParam(ServerContext *context, const ParamGrad *
         auto &param = ServerStore::params[grad_id];
         auto bias_correction1 = 1 - pow(beta_1, ServerStore::t[grad_id]);
         auto bias_correction2 = 1 - pow(beta_2, ServerStore::t[grad_id]);
-
         for (int i = 0; i < grad_size; i++) {
             double g_t = grad_agg[i];
             if (isAdam) {
@@ -440,7 +435,9 @@ Status ServiceImpl::server_updateParam(ServerContext *context, const ParamGrad *
 
 
     }
+
     barrier_update();
+
     return Status::OK;
 }
 

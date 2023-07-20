@@ -8,6 +8,7 @@ unordered_map<string, py::array_t<float>> Sample::aggembs_neiembs;
 unordered_map<int, float> Sample::adimportance_v;
 unordered_set<int> Sample::nei_set_pc;
 
+
 void *fastgcnSampleParallel(void *data);
 
 struct RedPirorityData {
@@ -206,7 +207,7 @@ redPriorityAS_v(unordered_set<int> &adj, int k, int dim_size,
         int k_itv = getKItv(sample_num, k, i);
 
         auto nei_agg_map = getAddedNeiAgg(nei_use, agg_nei_use, o2n_dict, dim_size, nei_embs_ptr, adj, k_itv,
-                                          dim_prune_itv, rand_dim, sample_num,nei_prune);
+                                          dim_prune_itv, rand_dim, sample_num, nei_prune);
 
         auto agg_diff_map = getAggDiff(agg_v, dim_size, nei_agg_map, nei_use, diff, dim_prune_itv, rand_dim);
         if (agg_diff_map.empty()) {
@@ -225,77 +226,6 @@ redPriorityAS_v(unordered_set<int> &adj, int k, int dim_size,
 
     tuple<float, unordered_set<int>> data = make_tuple(diff, nei_use);
     return data;
-
-
-//    // compute diff between v and neis
-//    unordered_map<int, vector<float>> diff;
-//    vector<float> diff_sum(dim_size);
-//    unordered_set<int> nei_use;
-//    float diff_tmp = 5000000;
-//
-//
-//    for (auto nid:adj) {
-//        vector<float> diff_nid(dim_size);
-//        int nid_new = o2n_dict[nid];
-//        int v_new = o2n_dict[v];
-//        float *emb_nid = nei_embs_ptr + nid_new * dim_size;
-//        float *agg_v = agg_embs_ptr + v_new * dim_size;
-//        for (int i = 0; i < dim_size; i++) {
-//            diff_nid[i] = agg_v[i] - emb_nid[i];
-//        }
-//        diff.insert(pair<int, vector<float>>(nid, diff_nid));
-//    }
-//
-//
-//    if (!as_v.empty()) {
-//        for (auto nid:as_v) {
-//            nei_use.insert(nid);
-//            auto diff_nid = diff[nid];
-//            for (int i = 0; i < dim_size; i++) {
-//                diff_sum[i] += diff_nid[i];
-//            }
-//        }
-//        for (int i = 0; i < dim_size; i++) {
-//            diff_sum[i] /= as_v.size();
-//        }
-//    }
-//
-//
-//    while (nei_use.size() < k) {
-//        int v_add = -1;
-//        vector<float> diff_new_add;
-//        for (auto nid:adj) {
-//            if (!nei_use.count(nid)) {
-//                vector<float> diff_new(dim_size);
-//                auto diff_nid = diff[nid];
-//                float square_sum = 0;
-//                for (int i = 0; i < dim_size; i++) {
-//                    diff_new[i] = (diff_nid[i] + diff_sum[i] * nei_use.size()) / (nei_use.size() + 1);
-//                    square_sum += diff_new[i] * diff_new[i];
-//                }
-////                square_sum = sqrt(square_sum);
-//                if (diff_tmp > square_sum) {
-//                    diff_tmp = square_sum;
-//                    v_add = nid;
-//                    diff_new_add = diff_new_add;
-//                }
-//            }
-//        }
-//        if (v_add == -1) {
-//            break;
-//        } else {
-//            nei_use.insert(v_add);
-//            diff_sum = diff_new_add;
-//        }
-//    }
-//
-//    float diff_sum_val = 0;
-//    for (int i = 0; i < diff_sum.size(); i++) {
-//        diff_sum_val += pow(diff_sum[i], 2);
-//    }
-//    diff_sum_val = sqrt(diff_sum_val);
-//    tuple<float, unordered_set<int>> data = make_tuple(diff_sum_val, nei_use);
-//    return data;
 
 
 }
@@ -376,7 +306,7 @@ void *redPirorityASParallel(void *data) {
     auto lid = data_parse->lid;
     auto dim_prune_itv = data_parse->dim_prune_itv;
     auto adcomp_num = data_parse->adcomp_num;
-    auto nei_prune=data_parse->nei_prune;
+    auto nei_prune = data_parse->nei_prune;
 
 
     int itv = int(target_v.size() / WorkerStore::num_threads);
@@ -393,7 +323,7 @@ void *redPirorityASParallel(void *data) {
     for (int i = start_index; i < end_index; i++) {
         int v = target_v[i];
         auto data_return = redPriorityAS_v(adj[v], k, dim_size, v, o2n_dict, agg_embs_ptr, nei_embs_ptr, lid,
-                                           dim_prune_itv, adcomp_num,nei_prune);
+                                           dim_prune_itv, adcomp_num, nei_prune);
         float diff_val;
         unordered_set<int> nei_set_v;
         tie(diff_val, nei_set_v) = data_return;
@@ -428,7 +358,7 @@ recomputeAS_v(int v, unordered_map<int, unordered_set<int>> &adj, float *agg_v, 
               unordered_set<int> &as_v, int k, int dim_size, float alpha, unordered_map<int, int> &o2n_dict,
               float *agg_embs_ptr, float *nei_embs_ptr, int lid, int dim_prune_itv, int adcomp_num, int nei_prune) {
     auto data_red = redPriorityAS_v(adj[v], k, dim_size, v, o2n_dict, agg_embs_ptr, nei_embs_ptr, lid,
-                                    dim_prune_itv, adcomp_num,nei_prune);
+                                    dim_prune_itv, adcomp_num, nei_prune);
     float diff_red;
     unordered_set<int> as_red;
     tie(diff_red, as_red) = data_red;
@@ -457,7 +387,7 @@ void *recomputeASParallel(void *data) {
     auto lid = data_parse->lid;
     auto dim_prune_itv = data_parse->dim_prune_itv;
     auto adcomp_num = data_parse->adcomp_num;
-    auto nei_prune=data_parse->nei_prune;
+    auto nei_prune = data_parse->nei_prune;
 
     int itv = int(train_vertices.size() / WorkerStore::num_threads);
     int start_index = thread_id * itv;
@@ -474,7 +404,7 @@ void *recomputeASParallel(void *data) {
         auto agg_v = getAggEmb(v, o2n_dict, agg_embs_ptr, dim_size);
         auto embs_nei = getNeiEmbs(adj[v], o2n_dict, nei_embs_ptr, dim_size);
         auto anchor_set_v = recomputeAS_v(v, adj, agg_v, embs_nei, as_v, k, dim_size, alpha, o2n_dict, agg_embs_ptr,
-                                          nei_embs_ptr, lid, dim_prune_itv, adcomp_num,nei_prune);
+                                          nei_embs_ptr, lid, dim_prune_itv, adcomp_num, nei_prune);
         anchor_set.insert(pair<int, unordered_set<int>>(v, anchor_set_v));
     }
 
@@ -500,7 +430,7 @@ unordered_map<int, unordered_set<int>> recomputeAS(const py::array_t<float> *agg
     vector<pthread_t> pthreads(WorkerStore::num_threads);
 
     for (int i = 0; i < WorkerStore::num_threads; i++) {
-        auto* data = new RedPirorityData;
+        auto *data = new RedPirorityData;
         data->train_vertices = &train_vertices;
         data->agg_embs_ptr = agg_embs_ptr;
         data->nei_embs_ptr = nei_embs_ptr;
@@ -562,7 +492,7 @@ void *updateASParallel(void *data) {
     auto lid = data_parse->lid;
     auto dim_prune_itv = data_parse->dim_prune_itv;
     auto adcomp_num = data_parse->adcomp_num;
-    auto nei_prune=data_parse->nei_prune;
+    auto nei_prune = data_parse->nei_prune;
 
     int itv = int(train_vertices.size() / WorkerStore::num_threads);
     int start_index = thread_id * itv;
@@ -585,7 +515,7 @@ void *updateASParallel(void *data) {
         auto diff_agg_val = norm2(agg_v, dim_size);
         if (diff_nei_val > alpha * diff_agg_val) {
             auto anchor_set_v = recomputeAS_v(v, adj, agg_v, embs_nei, as_v_empty, k, dim_size, alpha, o2n_dict,
-                                              agg_embs_ptr, nei_embs_ptr, lid, dim_prune_itv, adcomp_num,nei_prune);
+                                              agg_embs_ptr, nei_embs_ptr, lid, dim_prune_itv, adcomp_num, nei_prune);
             anchor_set.insert(pair<int, unordered_set<int>>(v, anchor_set_v));
         } else {
             anchor_set.insert(pair<int, unordered_set<int>>(v, as_v[v]));
@@ -618,7 +548,7 @@ unordered_map<int, unordered_set<int>> updateAS(const py::array_t<float> *agg_em
     vector<pthread_t> pthreads(WorkerStore::num_threads);
 
     for (int i = 0; i < WorkerStore::num_threads; i++) {
-        auto* data = new RedPirorityData;
+        auto *data = new RedPirorityData;
         data->train_vertices = &train_vertices;
         data->agg_embs_ptr = agg_embs_ptr;
         data->nei_embs_ptr = nei_embs_ptr;
@@ -678,7 +608,7 @@ void *randomSampleParallel(void *data) {
             continue;
         }
 
-        auto adj_shuffle=SetVecTrans::set2vec(adj_v);
+        auto adj_shuffle = SetVecTrans::set2vec(adj_v);
 
         // 1
 //        unordered_set<int> index_set;
@@ -741,7 +671,7 @@ randomSampleLayer(int k, int layer_id) {
 
 
     for (int i = 0; i < WorkerStore::num_threads; i++) {
-        auto* data = new RedPirorityData;
+        auto *data = new RedPirorityData;
         data->adj = &adj;
         data->train_vertices = &target_v;
         data->k = k;
@@ -791,24 +721,24 @@ void Sample::randomSample(vector<int> &fanout) {
     auto layer_num = WorkerStore::layer_num;
     auto target_v_tmp = WorkerStore::graph.idx["train"];
     subgraph_sampled.graphlayers[layer_num].target_v = target_v_tmp;
-    double tu_sample=0;
-    double tu_update=0;
+    double tu_sample = 0;
+    double tu_update = 0;
+    clock_t start;
     for (int i = layer_num; i > 0; i--) {
         int k = fanout[layer_num - i];
-        clock_t start=clock();
+        start = clock();
         randomSampleLayer(k, i);
-        clock_t end = clock();
-        tu_sample+=(double)(end-start)/CLOCKS_PER_SEC;
-         start=clock();
+        WorkerStore::sample_time += (double) (clock() - start) / CLOCKS_PER_SEC;
+
+        start = clock();
         GraphBuild::updateGraphLayer(subgraph_sampled, i);
-        end = clock();
-        tu_update=(double)(end-start)/CLOCKS_PER_SEC;
+        WorkerStore::construction_time += (double) (clock() - start) / CLOCKS_PER_SEC;
 
     }
 
-    clock_t start=clock();
+    start = clock();
     GraphBuild::buildGraphForSample();
-    clock_t end = clock();
+    WorkerStore::construction_time += (double) (clock() - start) / CLOCKS_PER_SEC;
 //    cout << "################-1111111111111 time: " << tu_sample<<","<< tu_update<<","<<(double)(end-start)/CLOCKS_PER_SEC<<" s" << endl;
 //    GraphBuild::checkGraph(WorkerStore::graph_sampled);
 }
@@ -837,9 +767,6 @@ void Sample::initSampledGraph() {
 }
 
 
-
-
-
 unordered_map<int, unordered_set<int>>
 getAdjComm(int comm_fo, unordered_set<int> &target_v, unordered_map<int, unordered_set<int>> &adj) {
     vector<pthread_t> pthreads(WorkerStore::num_threads);
@@ -863,7 +790,7 @@ getAdjComm(int comm_fo, unordered_set<int> &target_v, unordered_map<int, unorder
     auto target_vec_v = SetVecTrans::set2vec(target_v);
 
     for (int i = 0; i < WorkerStore::num_threads; i++) {
-        auto* data = new RedPirorityData;
+        auto *data = new RedPirorityData;
         data->adj = &adj;
         data->train_vertices = &target_vec_v;
         data->thread_id = i;
@@ -880,7 +807,7 @@ getAdjComm(int comm_fo, unordered_set<int> &target_v, unordered_map<int, unorder
 }
 
 void
-adSampleForLayer(int k, int lid, int dim_itv, int adcomp_num, int comm_fo, bool enable_pc,int nei_prune) {
+adSampleForLayer(int k, int lid, int dim_itv, int adcomp_num, int comm_fo, bool enable_pc, int nei_prune) {
     unordered_map<int, unordered_set<int>> adj_sampled;
     unordered_set<int> nei_set;
 //
@@ -894,7 +821,7 @@ adSampleForLayer(int k, int lid, int dim_itv, int adcomp_num, int comm_fo, bool 
 
 
     for (int i = 0; i < WorkerStore::num_threads; i++) {
-        auto* data = new RedPirorityData;
+        auto *data = new RedPirorityData;
         data->target_v = &target_v;
         data->agg_embs_ptr = agg_embs_ptr;
         data->nei_embs_ptr = nei_embs_ptr;
@@ -908,7 +835,7 @@ adSampleForLayer(int k, int lid, int dim_itv, int adcomp_num, int comm_fo, bool 
         data->lid = lid;
         data->dim_prune_itv = dim_itv;
         data->adcomp_num = adcomp_num;
-        data->nei_prune=nei_prune;
+        data->nei_prune = nei_prune;
         pthread_create(&pthreads[i], NULL, redPirorityASParallel, (void *) data);
     }
 
@@ -927,7 +854,8 @@ adSampleForLayer(int k, int lid, int dim_itv, int adcomp_num, int comm_fo, bool 
 }
 
 void
-Sample::adSample(vector<int> &fanout, vector<int> &dim_itvs, int adcomp_num, bool enable_pc, vector<int> &comm_fo,int nei_prune) {
+Sample::adSample(vector<int> &fanout, vector<int> &dim_itvs, int adcomp_num, bool enable_pc, vector<int> &comm_fo,
+                 int nei_prune) {
     clearSampleGraph();
     Sample::adimportance_v.clear();
     Sample::nei_set_pc.clear();
@@ -939,16 +867,227 @@ Sample::adSample(vector<int> &fanout, vector<int> &dim_itvs, int adcomp_num, boo
 
     subgraph_sampled.graphlayers[layer_num].target_v = target_v_tmp;
 //    cout<<"1111111111111:"<<subgraph_sampled.graphlayers[layer_num].target_v.size()<<endl;
-
+    clock_t start;
     for (int i = layer_num; i > 0; i--) {
         int k = fanout[layer_num - i];
         int dim_itv = dim_itvs[layer_num - i];
         int comm_fo_lid = comm_fo[layer_num - i];
-        adSampleForLayer(k, i, dim_itv, adcomp_num, comm_fo_lid, enable_pc,nei_prune);
+        start = clock();
+        adSampleForLayer(k, i, dim_itv, adcomp_num, comm_fo_lid, enable_pc, nei_prune);
+        WorkerStore::sample_time += (double) (clock() - start) / CLOCKS_PER_SEC;
+
+        start = clock();
         GraphBuild::updateGraphLayer(subgraph_sampled, i);
+        WorkerStore::construction_time += (double) (clock() - start) / CLOCKS_PER_SEC;
     }
+
+    start = clock();
     GraphBuild::buildGraphForSample();
+    WorkerStore::construction_time += (double) (clock() - start) / CLOCKS_PER_SEC;
 }
+
+
+/***********************ad_sample_local*****************************/
+
+vector<float> aggregation(int dim_size,unordered_set<int>& nei_use,float *nei_embs_ptr,unordered_map<int, int> &o2n_map){
+    vector<float> agg_nei_use(dim_size);
+    for(auto nid:nei_use){
+        int nid_new = o2n_map[nid];
+        float *emb_nid = nei_embs_ptr + nid_new * dim_size;
+        for(int i=0;i<dim_size;i++){
+            agg_nei_use[i]+=emb_nid[i];
+        }
+    }
+    return agg_nei_use;
+}
+
+tuple<float, unordered_set<int>>
+redPriorityAS_v_local(unordered_set<int> &adj, int k, int dim_size,
+                      int v, unordered_map<int, int> &o2n_dict, float *agg_embs_ptr, float *nei_embs_ptr, int lid,
+                      int dim_prune_itv, int adcomp_num, int nei_prune) {
+    if (0.8 * adj.size() <= k) {
+        return make_tuple(0, adj);
+    }
+
+    int v_new = o2n_dict[v];
+    auto *agg_v = agg_embs_ptr + v_new * dim_size;
+    string model = "GCN";
+    unordered_set<int> nei_use(WorkerStore::loc_rmt_adj["loc"][v]);
+
+    if (model == "GAT") {
+        nei_use.insert(v); // to check if it only used in GAT?
+    }
+
+    k=k-int(WorkerStore::loc_rmt_adj["loc"][v].size());
+    if(k<=0){
+        return make_tuple(0,WorkerStore::loc_rmt_adj["loc"][v]);
+    }
+
+
+    int sample_num = adcomp_num;
+    if (k < sample_num) {
+        sample_num = k;
+    }
+
+    vector<float> agg_nei_use=aggregation(dim_size,nei_use,nei_embs_ptr,o2n_dict);
+
+    float diff = 10000000;
+
+    for (int i = 0; i < sample_num; i++) {
+        int rand_dim = i % dim_prune_itv;
+        int k_itv = getKItv(sample_num, k, i);
+
+        auto nei_agg_map = getAddedNeiAgg(nei_use, agg_nei_use, o2n_dict, dim_size, nei_embs_ptr, adj, k_itv,
+                                          dim_prune_itv, rand_dim, sample_num, nei_prune);
+
+        auto agg_diff_map = getAggDiff(agg_v, dim_size, nei_agg_map, nei_use, diff, dim_prune_itv, rand_dim);
+        if (agg_diff_map.empty()) {
+            break;
+        }
+
+        diff = sampleNeiWithKMinAD(k_itv, agg_diff_map, nei_use, agg_nei_use, dim_size, o2n_dict, nei_embs_ptr, agg_v,
+                                   dim_prune_itv, rand_dim, diff);
+        for (auto &elem:nei_agg_map) {
+            free(elem.second);
+        }
+        nei_agg_map.clear();
+
+    }
+
+
+    tuple<float, unordered_set<int>> data = make_tuple(diff, nei_use);
+    return data;
+
+
+}
+
+void *redPirorityASParallel_local(void *data) {
+//    clock_t startTime = clock();
+    auto data_parse = (RedPirorityData *) data;
+    auto target_v = SetVecTrans::set2vec(*data_parse->target_v);
+    auto agg_embs_ptr = data_parse->agg_embs_ptr;
+    auto nei_embs_ptr = data_parse->nei_embs_ptr;
+    auto dim_size = data_parse->dim_size;
+    auto &o2n_dict = *data_parse->o2n_dict;
+    auto &adj = *data_parse->adj;
+    auto thread_id = data_parse->thread_id;
+    auto k = data_parse->k;
+    auto lid = data_parse->lid;
+    auto dim_prune_itv = data_parse->dim_prune_itv;
+    auto adcomp_num = data_parse->adcomp_num;
+    auto nei_prune = data_parse->nei_prune;
+
+
+    int itv = int(target_v.size() / WorkerStore::num_threads);
+    int start_index = thread_id * itv;
+    int end_index;
+    if (thread_id == WorkerStore::num_threads - 1) {
+        end_index = target_v.size();
+    } else {
+        end_index = (thread_id + 1) * itv;
+    }
+    unordered_map<int, unordered_set<int>> adj_sampled;
+    unordered_set<int> nei_set;
+
+    for (int i = start_index; i < end_index; i++) {
+        int v = target_v[i];
+        auto data_return = redPriorityAS_v_local(adj[v], k, dim_size, v, o2n_dict, agg_embs_ptr, nei_embs_ptr, lid,
+                                                 dim_prune_itv, adcomp_num, nei_prune);
+        float diff_val;
+        unordered_set<int> nei_set_v;
+        tie(diff_val, nei_set_v) = data_return;
+        nei_set.insert(nei_set_v.begin(), nei_set_v.end());
+        adj_sampled.insert(pair<int, unordered_set<int>>(v, nei_set_v));
+
+    }
+
+    unique_lock<mutex> lck(ThreadUtil::mtx_ad);
+    data_parse->adj_sampled->insert(adj_sampled.begin(), adj_sampled.end());
+    data_parse->nei_set->insert(nei_set.begin(), nei_set.end());
+    lck.unlock();
+}
+
+void
+adSampleForLayer_local(int k, int lid, int dim_itv, int adcomp_num, int comm_fo, bool enable_pc, int nei_prune) {
+    unordered_map<int, unordered_set<int>> adj_sampled;
+    unordered_set<int> nei_set;
+//
+    auto &adj = WorkerStore::graph.adjs;
+    auto *agg_embs_ptr = (float *) Sample::aggembs_neiembs["agg_embs" + to_string(lid)].request().ptr;
+    auto *nei_embs_ptr = (float *) Sample::aggembs_neiembs["nei_embs" + to_string(lid)].request().ptr;
+    auto dim_size = Sample::aggembs_neiembs["agg_embs" + to_string(lid)].shape()[1];
+    auto &target_v = WorkerStore::graph_sampled.subgraphs["train"].graphlayers[lid].target_v;
+    vector<pthread_t> pthreads(WorkerStore::num_threads);
+    auto &o2n_map_full = WorkerStore::graph.subgraphs["train"].graphlayers[lid].o2n_map;
+
+
+    for (int i = 0; i < WorkerStore::num_threads; i++) {
+        auto *data = new RedPirorityData;
+        data->target_v = &target_v;
+        data->agg_embs_ptr = agg_embs_ptr;
+        data->nei_embs_ptr = nei_embs_ptr;
+        data->dim_size = dim_size;
+        data->o2n_dict = &o2n_map_full;
+        data->adj = &adj;
+        data->thread_id = i;
+        data->k = k;
+        data->adj_sampled = &adj_sampled;
+        data->nei_set = &nei_set;
+        data->lid = lid;
+        data->dim_prune_itv = dim_itv;
+        data->adcomp_num = adcomp_num;
+        data->nei_prune = nei_prune;
+        pthread_create(&pthreads[i], NULL, redPirorityASParallel_local, (void *) data);
+    }
+
+    for (int i = 0; i < WorkerStore::num_threads; i++) {
+        pthread_join(pthreads[i], NULL);
+    }
+
+    if (enable_pc) {
+        auto adj_comm = getAdjComm(comm_fo, target_v, adj_sampled);
+        WorkerStore::graph_sampled.subgraphs["train"].graphlayers[lid].adj = adj_comm;
+    } else {
+        WorkerStore::graph_sampled.subgraphs["train"].graphlayers[lid].adj = adj_sampled;
+    }
+
+
+}
+
+void
+Sample::adSample_local(vector<int> &fanout, vector<int> &dim_itvs, int adcomp_num, bool enable_pc, vector<int> &comm_fo,
+                       int nei_prune) {
+    clearSampleGraph();
+    Sample::adimportance_v.clear();
+    Sample::nei_set_pc.clear();
+
+
+    auto &subgraph_sampled = WorkerStore::graph_sampled.subgraphs["train"];
+    auto layer_num = WorkerStore::layer_num;
+    auto target_v_tmp = WorkerStore::graph.idx["train"];
+
+    subgraph_sampled.graphlayers[layer_num].target_v = target_v_tmp;
+//    cout<<"1111111111111:"<<subgraph_sampled.graphlayers[layer_num].target_v.size()<<endl;
+    clock_t start;
+    for (int i = layer_num; i > 0; i--) {
+        int k = fanout[layer_num - i];
+        int dim_itv = dim_itvs[layer_num - i];
+        int comm_fo_lid = comm_fo[layer_num - i];
+        start = clock();
+        adSampleForLayer_local(k, i, dim_itv, adcomp_num, comm_fo_lid, enable_pc, nei_prune);
+        WorkerStore::sample_time += (double) (clock() - start) / CLOCKS_PER_SEC;
+
+        start = clock();
+        GraphBuild::updateGraphLayer(subgraph_sampled, i);
+        WorkerStore::construction_time += (double) (clock() - start) / CLOCKS_PER_SEC;
+    }
+
+    start = clock();
+    GraphBuild::buildGraphForSample();
+    WorkerStore::construction_time += (double) (clock() - start) / CLOCKS_PER_SEC;
+}
+
+/********************************************************************************/
 
 void Sample::setAggEmb(const string &id, py::array_t<float> &embs) {
     if (Sample::aggembs_neiembs.count(id)) {
@@ -970,8 +1109,8 @@ void *bnsSampleParallel(void *data) {
     auto &rmt_nei_set = *data_parse->rmt_nei_set;
     int itv = int(train_vertices.size() / WorkerStore::num_threads);
     int start_index = thread_id * itv;
-    auto adj_sampled=WorkerStore::loc_rmt_adj["loc"];
-    auto &rmt_adj=WorkerStore::loc_rmt_adj["rmt"];
+    auto adj_sampled = WorkerStore::loc_rmt_adj["loc"];
+    auto &rmt_adj = WorkerStore::loc_rmt_adj["rmt"];
     int end_index;
 
     if (thread_id == WorkerStore::num_threads - 1) {
@@ -982,11 +1121,12 @@ void *bnsSampleParallel(void *data) {
 
     srand(1);
 
+
     for (int i = start_index; i < end_index; i++) {
         int v = train_vertices[i];
         auto &adj_v = rmt_adj[v];
         unordered_set<int> nei_set_v;
-        auto& adj_sampled_v=adj_sampled[v];
+        auto &adj_sampled_v = adj_sampled[v];
 
         for (auto nei:adj_v) {
             if (rmt_nei_set.count(nei)) {
@@ -1052,7 +1192,7 @@ bnsSampleLayer(int k, int layer_id) {
 
 
     for (int i = 0; i < WorkerStore::num_threads; i++) {
-        auto* data = new RedPirorityData;
+        auto *data = new RedPirorityData;
         data->adj = &adj;
         data->train_vertices = &target_v;
         data->k = k;
@@ -1076,35 +1216,35 @@ bnsSampleLayer(int k, int layer_id) {
 }
 
 
+void Sample::buildRmtAndLocAdj() {
+    auto &loc_rmt_adj = WorkerStore::loc_rmt_adj;
+    auto &adj = WorkerStore::graph.adjs;
+    auto &v2wk = WorkerStore::graph.v2wk;
+    unordered_map<int, unordered_set<int>> loc_adj;
+    unordered_map<int, unordered_set<int>> rmt_adj;
 
-void Sample::buildRmtAndLocAdj(){
-    auto &loc_rmt_adj=WorkerStore::loc_rmt_adj;
-    auto &adj=WorkerStore::graph.adjs;
-    auto &v2wk=WorkerStore::graph.v2wk;
-    unordered_map<int,unordered_set<int>> loc_adj;
-    unordered_map<int,unordered_set<int>> rmt_adj;
-
-    for(auto& nei_set:adj){
-        auto target_id=nei_set.first;
+    for (auto &nei_set:adj) {
+        auto target_id = nei_set.first;
         unordered_set<int> rmt_adj_v;
         unordered_set<int> loc_adj_v;
-        for(auto nid:nei_set.second){
-            auto wid=v2wk[nid];
-            if(wid != WorkerStore::worker_id){
+        for (auto nid:nei_set.second) {
+            auto wid = v2wk[nid];
+            if (wid != WorkerStore::worker_id) {
                 rmt_adj_v.insert(nid);
-            }else{
+            } else {
                 loc_adj_v.insert(nid);
             }
         }
-        rmt_adj.insert(make_pair(target_id,rmt_adj_v));
-        loc_adj.insert(make_pair(target_id,loc_adj_v));
+        rmt_adj.insert(make_pair(target_id, rmt_adj_v));
+        loc_adj.insert(make_pair(target_id, loc_adj_v));
     }
 
-    loc_rmt_adj.insert(make_pair("loc",loc_adj));
-    loc_rmt_adj.insert(make_pair("rmt",rmt_adj));
+    loc_rmt_adj.insert(make_pair("loc", loc_adj));
+    loc_rmt_adj.insert(make_pair("rmt", rmt_adj));
 
-    cout<<"rmt and loc adjs build success"<<endl;
-    cout<<"adj lengths comparison adj,loc,rmt: "<<WorkerStore::graph.adjs.size()<<","<<WorkerStore::loc_rmt_adj["loc"].size()<<","<<WorkerStore::loc_rmt_adj["rmt"].size()<<endl;
+    cout << "rmt and loc adjs build success" << endl;
+    cout << "adj lengths comparison adj,loc,rmt: " << WorkerStore::graph.adjs.size() << ","
+         << WorkerStore::loc_rmt_adj["loc"].size() << "," << WorkerStore::loc_rmt_adj["rmt"].size() << endl;
 }
 
 void Sample::bnsSample(vector<int> &fanout) {
@@ -1112,13 +1252,21 @@ void Sample::bnsSample(vector<int> &fanout) {
     auto &subgraph_sampled = WorkerStore::graph_sampled.subgraphs["train"];
     auto layer_num = WorkerStore::layer_num;
     subgraph_sampled.graphlayers[layer_num].target_v = WorkerStore::graph.idx["train"];
-
+    clock_t start;
     for (int i = layer_num; i > 0; i--) {
         int k = fanout[layer_num - i];
+        start = clock();
         bnsSampleLayer(k, i);
+        WorkerStore::sample_time += (double) (clock() - start) / CLOCKS_PER_SEC;
+
+        start = clock();
         GraphBuild::updateGraphLayer(subgraph_sampled, i);
+        WorkerStore::construction_time += (double) (clock() - start) / CLOCKS_PER_SEC;
     }
+
+    start = clock();
     GraphBuild::buildGraphForSample();
+    WorkerStore::construction_time += (double) (clock() - start) / CLOCKS_PER_SEC;
 }
 
 
@@ -1153,6 +1301,10 @@ void *clustergcnSampleParallel(void *data) {
             }
         }
 
+//        if(nei_set_v.empty()){
+//            nei_set_v.insert(v);
+//        }
+
         adj_sampled.insert(pair<int, unordered_set<int>>(v, nei_set_v));
 
     }
@@ -1175,7 +1327,7 @@ clustergcnSampleLayer(int lid, unordered_set<int> &sub_node) {
 
 
     for (int i = 0; i < WorkerStore::num_threads; i++) {
-        auto* data = new RedPirorityData;
+        auto *data = new RedPirorityData;
         data->adj = &adj;
         data->train_vertices = &target_v;
         data->thread_id = i;
@@ -1204,12 +1356,19 @@ void Sample::clustergcnSample(unordered_set<int> &nei_set_sampled) {
 //    if(nei_set_sampled.count(0)){
 //        cout<<"00000000000000000"<<endl;
 //    }
-
+    clock_t start;
     for (int i = layer_num; i > 0; i--) {
+        start = clock();
         clustergcnSampleLayer(i, nei_set_sampled);
+        WorkerStore::sample_time += (double) (clock() - start) / CLOCKS_PER_SEC;
+
+        start = clock();
         GraphBuild::updateGraphLayer(subgraph_sampled, i);
+        WorkerStore::construction_time += (double) (clock() - start) / CLOCKS_PER_SEC;
     }
+    start = clock();
     GraphBuild::buildGraphForSample();
+    WorkerStore::construction_time += (double) (clock() - start) / CLOCKS_PER_SEC;
 }
 
 
@@ -1303,7 +1462,7 @@ fastgcnSampleLayer(int k, int lid) {
 
 
     for (int i = 0; i < WorkerStore::num_threads; i++) {
-        auto* data = new RedPirorityData;
+        auto *data = new RedPirorityData;
         data->adj = &adj;
         data->train_vertices = &target_v;
         data->k = k;
@@ -1328,12 +1487,176 @@ void Sample::fastgcnSample(vector<int> &fanout) {
     auto layer_num = WorkerStore::layer_num;
     auto target_v_tmp = WorkerStore::graph.idx["train"];
     subgraph_sampled.graphlayers[layer_num].target_v = target_v_tmp;
-
+    clock_t start;
     for (int i = layer_num; i > 0; i--) {
         int k = fanout[layer_num - i];
+        start = clock();
         fastgcnSampleLayer(k, i);
+        WorkerStore::sample_time += (double) (clock() - start) / CLOCKS_PER_SEC;
+
+        start = clock();
         GraphBuild::updateGraphLayer(subgraph_sampled, i);
+        WorkerStore::construction_time += (double) (clock() - start) / CLOCKS_PER_SEC;
     }
 //    GraphBuild::evalSubGraph(WorkerStore::graph_sampled.subgraphs["train"],"sample");
+    start = clock();
     GraphBuild::buildGraphForSample();
+    WorkerStore::construction_time += (double) (clock() - start) / CLOCKS_PER_SEC;
 }
+
+
+/******************************************************/
+
+//void *fosSampleParallel(void *data) {
+//    auto *data_parse = (RedPirorityData *) data;
+//    auto &adj = *data_parse->adj;
+//    auto &train_vertices = *data_parse->train_vertices;
+//    auto thread_id = data_parse->thread_id;
+//    auto &nei_set_sampled = *data_parse->nei_set_sampled;
+//
+//    int itv = int(train_vertices.size() / WorkerStore::num_threads);
+//    int start_index = thread_id * itv;
+//    int end_index;
+//
+//    if (thread_id == WorkerStore::num_threads - 1) {
+//        end_index = train_vertices.size();
+//    } else {
+//        end_index = (thread_id + 1) * itv;
+//    }
+//
+//    unordered_map<int, unordered_set<int>> adj_sampled;
+//
+//
+//    for (int i = start_index; i < end_index; i++) {
+//        int v = train_vertices[i];
+//        auto &adj_v = adj[v];
+//        unordered_set<int> nei_set_v;
+//
+//        for (auto nei:adj_v) {
+//            if (nei_set_sampled.count(nei)) {
+//                nei_set_v.insert(nei);
+//            }
+//        }
+//
+//        adj_sampled.insert(pair<int, unordered_set<int>>(v, nei_set_v));
+//
+//    }
+//
+//    unique_lock<mutex> lck(ThreadUtil::mtx_ad);
+//    data_parse->adj_sampled->insert(adj_sampled.begin(), adj_sampled.end());
+//    lck.unlock();
+//
+//}
+
+
+
+//vector<pair<int,int>> merge_pair(vector<pair<int,int>> &sampled_range){
+//    vector<pair<int,int>> new_range;
+//    for(auto &pair:sampled_range){
+//        if(new_range.empty()){
+//            new_range.push_back(sampled_range[0]);
+//            continue;
+//        }
+//        if(new_range[new_range.size()-1].second>pair.first){
+//            new_range[new_range.size()-1].second=pair.second;
+//        }else{
+//            new_range.push_back(pair);
+//        }
+//    }
+//    return new_range;
+//}
+//
+//void
+//fosSampleLayer(int k, int lid) {
+//    auto &adj = WorkerStore::graph.adjs;
+//    vector<pthread_t> pthreads(WorkerStore::num_threads);
+//    unordered_map<int, unordered_set<int>> adj_sampled;
+//    unordered_set<int> neis;
+//    unordered_set<int> nei_set_sampled;
+//    auto &v2wk = WorkerStore::graph.v2wk;
+//    auto wid = WorkerStore::worker_id;
+//    auto &graphlayer = WorkerStore::graph_sampled.subgraphs["train"].graphlayers[lid];
+//    auto target_v = SetVecTrans::set2vec(graphlayer.target_v);
+//    int bulk_decomp = 8;
+//    int range_size = k / bulk_decomp;
+//    int nei_size = WorkerStore::graph.subgraphs["train"].graphlayers[lid].feat.shape(0);
+//
+//    if (WorkerStore::range_size.count(lid)==0) {
+//            WorkerStore::range_size.insert(make_pair(lid,range_size));
+//            vector<int> tmp(bulk_decomp);
+//            WorkerStore::start_indices.insert(make_pair(lid,tmp));
+//    }else{
+//        WorkerStore::range_size[lid]=range_size;
+//    }
+//
+//    if (nei_size <= k) {
+//        for (auto id : target_v) {
+//            adj_sampled.insert(make_pair(id, adj[id]));
+//        }
+//        graphlayer.adj = adj_sampled;
+//        return;
+//    } else {
+//        for (int i = 0; i < bulk_decomp; i++) {
+//            int rand_num=rand()%nei_size;
+//            WorkerStore::start_indices[lid][i]=rand_num;
+//        }
+//    }
+//    sort(WorkerStore::start_indices[lid].begin(),WorkerStore::start_indices[lid].end());
+//
+//    vector<pair<int,int>> sampled_range;
+//
+//    for(auto startid:WorkerStore::start_indices[lid]){
+//        if(startid+range_size>nei_size){
+//            sampled_range.emplace_back(startid,nei_size);
+//        }else{
+//            sampled_range.emplace_back(startid,startid+range_size);
+//        }
+//    }
+//
+//    sampled_range=merge_pair(sampled_range);
+//
+//    for(auto &pair:sampled_range){
+//        for(int i=pair.first;i<pair.second;i++){
+//            nei_set_sampled.insert(i);
+//        }
+//    }
+//
+//
+//
+//    for (int i = 0; i < WorkerStore::num_threads; i++) {
+//        auto *data = new RedPirorityData;
+//        data->adj = &adj;
+//        data->train_vertices = &target_v;
+//        data->k = k;
+//        data->thread_id = i;
+//        data->adj_sampled = &adj_sampled;
+//        data->nei_set_sampled = &nei_set_sampled;
+//        pthread_create(&pthreads[i], NULL, fosSampleParallel, (void *) data);
+//
+//    }
+//
+//    for (int i = 0; i < WorkerStore::num_threads; i++) {
+//        pthread_join(pthreads[i], NULL);
+//    }
+//
+//    graphlayer.adj = adj_sampled;
+//}
+//
+//
+//void Sample::fosSample(vector<int> &fanout) {
+//    clearSampleGraph();
+//    auto &subgraph_sampled = WorkerStore::graph_sampled.subgraphs["train"];
+//    auto layer_num = WorkerStore::layer_num;
+//    auto target_v_tmp = WorkerStore::graph.idx["train"];
+//    subgraph_sampled.graphlayers[layer_num].target_v = target_v_tmp;
+//
+//
+//
+//    for (int i = layer_num; i > 0; i--) {
+//        int k = fanout[layer_num - i];
+//        fosSampleLayer(k, i);
+//        GraphBuild::updateGraphLayer(subgraph_sampled, i);
+//    }
+////    GraphBuild::evalSubGraph(WorkerStore::graph_sampled.subgraphs["train"],"sample");
+//    GraphBuild::buildGraphForSampleFOS();
+//}

@@ -18,6 +18,7 @@ public:
     void printGraphInfo();
     static void updateGraphLayer(SubGraph& subgraph,int lid);
     static void buildGraphForSample();
+
     static void checkGraph(Graph &graph);
     static void evalSubGraph(SubGraph &graph,const string& graph_mode);
     void deleteFullGraphInCpp();

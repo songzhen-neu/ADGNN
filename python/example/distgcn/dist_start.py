@@ -24,6 +24,7 @@ from adgnn.sample.bns_gcn import bns_gcn
 from adgnn.sample.graphsage import random_sample
 from adgnn.sample.fastgcn import fastgcn
 from adgnn.sample.cluster_gcn import cluster_gcn
+from adgnn.sample.fos import fos
 import numpy as np
 from python.adgnn.util_python.evaluation import *
 import copy
@@ -33,7 +34,7 @@ import time
 from adgnn.sample.agl import fixed_sample
 from adgnn.util_python.evaluate_ad import eval_ad
 
-cpu_num = cpu_count()  # 自动获取最大核心数目
+cpu_num = cpu_count()
 # print("cpu num:{0}".format(cpu_num))
 # os.environ['OMP_NUM_THREADS'] = str(cpu_num)
 # os.environ['OPENBLAS_NUM_THREADS'] = str(cpu_num)
@@ -94,12 +95,12 @@ class GCN_Engine(Engine):
                     graph = aggDiff.sample(samp_num, e, batch_size, comm_fo=comm_fo, enable_pc=enable_pc, m=m_ad,
                                            enab_adap_m=enab_adap_m, dim_itvs=dim_itvs,
                                            adcomp_num=adcomp_num,nei_prune=nei_prune,
-                                           model=self.model)
+                                           model=self.model,model_type='GCN')
                 elif sample_method == 'ad_every':
                     graph = aggDiff.sample_every(samp_num, e, batch_size, comm_fo=comm_fo, enable_pc=enable_pc, m=m_ad,
                                                  enab_adap_m=enab_adap_m, dim_itvs=dim_itvs,
                                                  adcomp_num=adcomp_num,
-                                                 model=self.model)
+                                                 model=self.model,model_type='GCN')
                 elif sample_method == 'random':
                     graph = random_sample.sample(samp_num, e)
                 elif sample_method == 'fixed':
@@ -108,8 +109,15 @@ class GCN_Engine(Engine):
                     graph = bns_gcn.sample(graph, samp_num, e, batch_size)
                 elif sample_method == 'fastgcn':
                     graph = fastgcn.sample(graph, samp_num, e, batch_size)
+                # elif sample_method == 'fos':
+                #     graph = fos.sample(graph, samp_num, e, batch_size)
                 elif sample_method == 'clustergcn':
                     graph = cluster_gcn.sample(graph, samp_num[0], e, batch_size, cluster_number=samp_num[1])
+                elif sample_method == 'ad_local':
+                    graph = aggDiff.sample_local(samp_num, e, batch_size, comm_fo=comm_fo, enable_pc=enable_pc, m=m_ad,
+                                       enab_adap_m=enab_adap_m, dim_itvs=dim_itvs,
+                                       adcomp_num=adcomp_num,nei_prune=nei_prune,
+                                       model=self.model,model_type='GCN')
                 else:
                     print("no such sample method!")
                     exit(-1)
@@ -117,7 +125,7 @@ class GCN_Engine(Engine):
                     for i in range(1, context.glContext.config['layer_num'] + 1):
                         print(graph.subgraphs['train'].graphlayers[i].adj.tensor)
             # eval_ad.evalOptimalSet(e,graph)
-            eval_ad.evalAD(model,e,graph.subgraphs['train'])
+            #eval_ad.evalAD(model,e,graph.subgraphs['train'])
             time_counter.end('sample')
             # time_counter.start('eval_graph_time')
             # evaluator.evalSampledGraph(graph.subgraph['train'])
@@ -126,8 +134,8 @@ class GCN_Engine(Engine):
             output = model(graph.subgraphs['train'])
             time_counter.end('fp')
             loss_train = F.nll_loss(output, graph.subgraphs['train'].label)
-            acc_train = accuracy_score(graph.subgraphs['train'].label.tensor.detach().numpy(),
-                                       output.tensor.detach().numpy().argmax(axis=1))
+            acc_train = accuracy_score(graph.subgraphs['train'].label.tensor.cpu().detach().numpy(),
+                                       output.tensor.cpu().detach().numpy().argmax(axis=1))
             time_counter.start('bp')
             loss_train.backward()
             time_counter.end('bp')
@@ -143,18 +151,22 @@ class GCN_Engine(Engine):
                 gc.collect()
                 output = model(context.glContext.graph_full.subgraphs['val'])
 
-                acc_val = accuracy_score(context.glContext.graph_full.subgraphs['val'].label.tensor.detach().numpy(),
-                                         output.tensor.detach().numpy().argmax(axis=1))
+                acc_val = accuracy_score(context.glContext.graph_full.subgraphs['val'].label.tensor.cpu().detach().numpy(),
+                                         output.tensor.cpu().detach().numpy().argmax(axis=1))
 
                 acc_test = 0
-                if e == epoch - 1:
 
-                    output = model(context.glContext.graph_full.subgraphs['test'])
-                    acc_test = accuracy_score(
-                        context.glContext.graph_full.subgraphs['test'].label.tensor.detach().numpy(),
-                        output.tensor.detach().numpy().argmax(axis=1))
 
-                acc_avrg = self.getAccAvrg(context.glContext.graph_full, acc_train, acc_val, acc_test)
+                output = model(context.glContext.graph_full.subgraphs['test'])
+                acc_test = accuracy_score(
+                    context.glContext.graph_full.subgraphs['test'].label.tensor.cpu().detach().numpy(),
+                    output.tensor.cpu().detach().numpy().argmax(axis=1))
+
+                train_num=len(context.glContext.graph_full.subgraphs['train'].label.tensor)
+                val_num=len(context.glContext.graph_full.subgraphs['val'].label.tensor)
+                test_num=len(context.glContext.graph_full.subgraphs['test'].label.tensor)
+
+                acc_avrg = self.getAccAvrg([train_num,val_num,test_num], acc_train, acc_val, acc_test)
 
                 print('Epoch: {:04d}'.format(e + 1),
                       'loss_train: {:.4f}'.format(loss_train.tensor),
@@ -189,6 +201,6 @@ if __name__ == "__main__":
     model = GCN(nfeat=context.glContext.config['feature_dim'],
                 nhid=context.glContext.config['hidden'],
                 nclass=context.glContext.config['class_num'],
-                dropout=0.5)
+                dropout=0)
     gcn_engine = GCN_Engine(model)
     gcn_engine()

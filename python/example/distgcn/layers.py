@@ -19,19 +19,37 @@ class GraphConvolution(nn.Module):
         self.in_features = in_features
         self.out_features = out_features
 
-        self.weight = adgnn.ECTensor(tensor=torch.FloatTensor(in_features, out_features),
+        self.weight = adgnn.ECTensor(tensor=nn.Parameter(torch.empty(size=(in_features, out_features))),
                                      name='w' + str(self.layer_id), requires_grad=True)
+        # self.weight = adgnn.ECTensor(tensor=torch.FloatTensor(in_features, out_features),
+        #                              name='w' + str(self.layer_id), requires_grad=True)
+        if glContext.config['device']!='cpu':
+            self.weight.tensor=self.weight.tensor.cuda()
         torch.manual_seed(1)
+        self.weight.tensor.retain_grad()
         nn.init.xavier_uniform_(self.weight.tensor)
+        glContext.parameters['w' + str(layer_id)] = self.weight.tensor.data.flatten().detach().tolist()
 
         if bias:
-            self.bias = adgnn.ECTensor(tensor=torch.FloatTensor(1, out_features), name='b' + str(self.layer_id),
+            self.bias = adgnn.ECTensor(tensor=nn.Parameter(torch.empty(size=(1, out_features))), name='b' + str(self.layer_id),
                                        requires_grad=True)
+            # self.bias = adgnn.ECTensor(tensor=torch.FloatTensor(1, out_features), name='b' + str(self.layer_id),
+            #                            requires_grad=True)
+            self.bias.tensor.retain_grad()
             nn.init.zeros_(self.bias.tensor)
+            glContext.parameters['b' + str(layer_id)] = self.bias.tensor.data.flatten().detach().tolist()
+            if glContext.config['device']!='cpu':
+                self.bias.tensor=self.bias.tensor.cuda()
 
     def forward(self, input, graph):
         time_counter.start("fp-getadj")
         adj = graph.getAdj(self.layer_id)
+        if glContext.config['device']!='cpu':
+            time_counter.start("to_device")
+            input.tensor=input.tensor.cuda()
+            adj.tensor=adj.tensor.cuda()
+            time_counter.end("to_device")
+
         time_counter.end("fp-getadj")
         # embs_trans = F.mm(input, self.weight)
         # embs = rmt.pushEmbs(self.layer_id, graph, embs_trans)

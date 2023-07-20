@@ -66,11 +66,13 @@ def parserInit():
         context.glContext.config['emb_dims'].extend(context.glContext.config['hidden'])
         context.glContext.config['emb_dims'].append(context.glContext.config['class_num'])
 
-        iter_lr_pttMethod_printInterval = str.split(args.iter_lr_pttMethod_printInterval, ',')
+        iter_lr_pttMethod_printInterval= str.split(args.iter_lr_pttMethod_printInterval, ',')
         context.glContext.config['iterNum'] = int(iter_lr_pttMethod_printInterval[0])
         context.glContext.config['lr'] = float(iter_lr_pttMethod_printInterval[1])
         context.glContext.config['partitionMethod'] = iter_lr_pttMethod_printInterval[2]
         context.glContext.config['print_result_interval'] = int(iter_lr_pttMethod_printInterval[3])
+        context.glContext.config['device'] = iter_lr_pttMethod_printInterval[4]
+        context.glContext.config['head'] = int(iter_lr_pttMethod_printInterval[5])
 
         # sampNum_batchSize_commFo_enablePc_mAd_mAsAd_alphaSelectAs_asFanout_betaRecomp_enabAdapM
         sample_info = str.split(args.sampleInfo, ',')

@@ -564,7 +564,9 @@ DGNNClient::server_updateParam(int worker_id, int server_id, float lr, const str
     auto *ptr1 = (double *) grad_buf.ptr;
     request.mutable_elems()->Add(ptr1, ptr1 + grad.size());
 
+
     Status status = stub_->server_updateParam(&context, request, &reply);
+
 
     if (status.ok()) {
 
@@ -808,6 +810,9 @@ void DGNNClient::readDataAndInit() {
         vector<float> vec_feat(feat_size);
         for (int i = 1; i < feat_size + 1; i++) {
             vec_feat[i - 1] = atof(v[i].c_str());
+//            if(vec_feat[i - 1]>10000){
+//                cout<<"aaaaaaaaaaa:"<<vec_feat[i-1]<<endl;
+//            }
         }
         graph.features.insert(pair<int, vector<float>>(vertex_id, vec_feat));
 

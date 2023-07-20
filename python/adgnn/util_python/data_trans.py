@@ -582,6 +582,15 @@ def setStaticInfoForCpp(graph):
     context.glContext.dgnnClient.setStaticInfoForCpp(rmt_nei_set, loc_nei_set)
 
 
+def normalize_adj(mx):
+    """Row-normalize sparse matrix"""
+    rowsum = np.array(mx.sum(1))
+    r_inv_sqrt = np.power(rowsum, -0.5).flatten()
+    r_inv_sqrt[np.isinf(r_inv_sqrt)] = 0.
+    r_mat_inv_sqrt = sp.diags(r_inv_sqrt)
+    return mx.dot(r_mat_inv_sqrt).transpose().dot(r_mat_inv_sqrt)
+
+
 def setAdj(status, graph_mode):
     graph=getGraph(graph_mode)
     layer_num = context.glContext.config['layer_num']
@@ -598,6 +607,15 @@ def setAdj(status, graph_mode):
             graph.subgraphs[status].graphlayers[lay].adj = adjs_train
 
 
+def normalize_features(mx):
+    """Row-normalize sparse matrix"""
+    rowsum = np.array(mx.sum(1))
+    r_inv = np.power(rowsum, -1).flatten()
+    r_inv[np.isinf(r_inv)] = 0.
+    r_mat_inv = sp.diags(r_inv)
+    mx = r_mat_inv.dot(mx)
+    return mx
+
 def getGraph(graph_mode):
     if graph_mode == 'full':
         return context.glContext.graph_full
@@ -607,7 +625,9 @@ def getGraph(graph_mode):
 
 def setFeat(status, graph_mode):
     graph = getGraph(graph_mode)
+    graph.subgraphs[status].feat_data = torch.FloatTensor(normalize_features(torch.FloatTensor(context.glContext.graphBuild.getTrainedFeat(status, graph_mode))))
     graph.subgraphs[status].feat_data = torch.FloatTensor(context.glContext.graphBuild.getTrainedFeat(status, graph_mode))
+    # print(graph.subgraphs[status].feat_data[graph.subgraphs[status].feat_data>=10000])
 
 
 def setLabel(status, graph_mode):
@@ -653,3 +673,27 @@ def load_data():
     print("load data end")
     return context.glContext.graph_full
 
+
+
+def load_data_gat():
+    # global ids encoded by master
+    setCtxForCpp()
+    time_counter.start("getInfoFromMaster")
+    print("getInfoFromMaster start")
+    getInfoFromFile()
+    print("getInfoFromMaster end")
+    time_counter.end("getInfoFromMaster")
+
+    time_counter.start("buildInitGraph")
+    context.glContext.graphBuild.buildInitGraph()
+    context.glContext.dgnnServerRouter[0].server_Barrier()
+    time_counter.end("buildInitGraph")
+
+    time_counter.start("transGraphCppToPython")
+    transGraphCppToPython("train", "full")
+    transGraphCppToPython("val", "full")
+    transGraphCppToPython("test", "full")
+    context.glContext.graphBuild.deleteFullGraphInCpp()
+    time_counter.end("transGraphCppToPython")
+    print("load data end")
+    return context.glContext.graph_full

@@ -26,6 +26,7 @@ public:
     static condition_variable cv_barrier;
     static int count_worker_for_barrier;
 
+
     static mutex mtx_updateModels;
     static pthread_mutex_t mtx_updateModels_addGrad;
     static mutex mtx_updateModels_barrier;

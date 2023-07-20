@@ -12,13 +12,15 @@ class TimeCounter():
     #         context.glContext.time_epoch[id] = 0
 
     def start(self, key):
-        self.start_time[key] = time.time()
+        if context.glContext.is_train:
+            self.start_time[key] = time.time()
 
     def end(self, key):
-        end = time.time()
-        if not self.time_list.__contains__(key):
-            self.time_list[key] = []
-        self.time_list[key].append(end - self.start_time[key])
+        if context.glContext.is_train:
+            end = time.time()
+            if not self.time_list.__contains__(key):
+                self.time_list[key] = []
+            self.time_list[key].append(end - self.start_time[key])
 
     def show(self, key):
         print((key + ' time: {:.4f}').format(self.time_list[key][-1]))

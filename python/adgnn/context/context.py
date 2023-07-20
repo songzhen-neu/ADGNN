@@ -20,9 +20,9 @@ class Context(object):
 
 
         # for sampling
-        'sample_num':[3,3], # [sampled_metispart,all_metispart] for clustergcn
+        'sample_num':[0,0], # [sampled_metispart,all_metispart] for clustergcn
         'batch_size':100000000,
-        'sample_method':'ad', # none,bns,random,ad,fastgcn,fixed,clustergcn
+        'sample_method':'ad_local', # none,bns,random,ad,fastgcn,fixed,clustergcn,ad_local
         # 'partitionMethod': 'clustergcn1200-',  # hash,metis
         'partitionMethod': 'hash',  # hash,metis
 
@@ -30,7 +30,7 @@ class Context(object):
         'dim_itvs':[1,1], # hiddenN -> ... ->hidden1 -> feature
         'adcomp_num':1,
         'nei_prune':222,
-        'comm_fo':[1100,900],
+        'comm_fo':[1200,1200],
         'enable_pc':False,
         'm_ad':10,
         'enab_adap_m':False,
@@ -40,10 +40,10 @@ class Context(object):
         'layer_num': 2,
         'emb_dims': [],
         'iterNum': 50,
-        'lr': 0.01,
+        'lr': 0.05,
         'print_result_interval': 1,
-
-
+        'device': 'cpu',
+        'head': 8,
 
 
         # 'data_path': '/mnt/data/reddit-small',
@@ -56,17 +56,6 @@ class Context(object):
         # 'train_num':153932, #153932
         # 'val_num':23699,
         # 'test_num':55334, #55334
-
-        # 'data_path': '/mnt/data/cora/',
-        # 'raw_data_path': '/mnt/data_raw/cora/',
-        # 'hidden': [16],
-        # 'data_num': 2708,
-        # 'feature_dim': 1433,
-        # 'class_num': 7,
-        # 'edge_num': 5278,
-        # 'train_num': 140,  # 140
-        # 'val_num': 300,
-        # 'test_num': 1000,
 
 
         # 'data_path': '/mnt/data/ogbn-papers100M',
@@ -104,7 +93,7 @@ class Context(object):
 
         # 'data_path': '/mnt/data/ogbn-arxiv',
         # 'raw_data_path': '/mnt/data/ogbn-arxiv',
-        # 'hidden': [128],
+        # 'hidden': [16],
         # 'data_num': 169343,
         # 'feature_dim': 128,
         # 'class_num': 40,
@@ -113,9 +102,9 @@ class Context(object):
         # 'val_num': 29799,  # 1971,500
         # 'test_num': 48603,  # 4930,1000
 
-        # 'data_path': '/mnt/data/test',
+        # 'data_path': '/mnt/data/test/',
         # 'raw_data_path': '/mnt/data/test',
-        # 'hidden': [4],
+        # 'hidden': [8],
         # 'data_num': 16,
         # 'feature_dim': 4,
         # 'class_num': 16,
@@ -124,6 +113,16 @@ class Context(object):
         # 'val_num': 10,
         # 'test_num': 3,
 
+        # 'data_path': '/mnt/data/cora/',
+        # 'raw_data_path': '/mnt/data_raw/cora/',
+        # 'hidden': [8],
+        # 'data_num': 2708,
+        # 'feature_dim': 1433,
+        # 'class_num': 7,
+        # 'edge_num': 5278,
+        # 'train_num': 140,  # 140
+        # 'val_num': 300,
+        # 'test_num': 1000,
 
     }
 
