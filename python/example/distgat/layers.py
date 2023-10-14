@@ -38,6 +38,7 @@ class pushEmbsFunction(torch.autograd.Function):
     def backward(ctx, grad_output):
         layer_id=ctx.layer_id
         # print(grad_output)
+        print("1111111111111111111111")
 
         emb_grad = glContext.dgnnClientRouterForCpp.setAndSendG(
             layer_id,
@@ -78,6 +79,7 @@ class SpecialSpmmFunction(torch.autograd.Function):
 
         a, b,layer_id = ctx.saved_tensors
         grad_values = grad_b = None
+        # print("11111111111111111")
 
         if ctx.needs_input_grad[1]:
             # start=time.time()

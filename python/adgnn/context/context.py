@@ -20,9 +20,9 @@ class Context(object):
 
 
         # for sampling
-        'sample_num':[0,0], # [sampled_metispart,all_metispart] for clustergcn
+        'sample_num':[1,1], # [sampled_metispart,all_metispart] for clustergcn
         'batch_size':100000000,
-        'sample_method':'ad_local', # none,bns,random,ad,fastgcn,fixed,clustergcn,ad_local
+        'sample_method':'ad', # none,bns,random,ad,fastgcn,fixed,clustergcn,ad_local
         # 'partitionMethod': 'clustergcn1200-',  # hash,metis
         'partitionMethod': 'hash',  # hash,metis
 
@@ -30,16 +30,16 @@ class Context(object):
         'dim_itvs':[1,1], # hiddenN -> ... ->hidden1 -> feature
         'adcomp_num':1,
         'nei_prune':222,
-        'comm_fo':[1200,1200],
-        'enable_pc':False,
+        'comm_fo':[120,120],
+        'enable_pc':True,
         'm_ad':10,
-        'enab_adap_m':False,
+        'enab_adap_m':True,
         'num_threads':1,
 
 
         'layer_num': 2,
         'emb_dims': [],
-        'iterNum': 50,
+        'iterNum': 200,
         'lr': 0.05,
         'print_result_interval': 1,
         'device': 'cpu',

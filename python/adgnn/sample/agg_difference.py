@@ -78,13 +78,13 @@ class AggDiff(Sample):
                 pk = self.model.gc[1].weight.tensor
                 for i in range(2, context.glContext.config['layer_num'] + 1):
                     pk = pk.mm(self.model.gc[i].weight.tensor)
-                pk = np.linalg.norm(pk, ord=2)
+                pk = np.linalg.norm(pk.detach().numpy(), ord=2)
                 self.pk_last = pk
             else:
                 pk = self.model.gc[1].weight.tensor
                 for i in range(2, context.glContext.config['layer_num'] + 1):
                     pk = pk.mm(self.model.gc[i].weight.tensor)
-                pk = np.linalg.norm(pk, ord=2)
+                pk = np.linalg.norm(pk.detach().numpy(), ord=2)
                 if epoch != 0:
                     if pk > 1.1 * self.pk_last:
                         if self.m > self.benefit_m:
