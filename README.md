@@ -37,7 +37,7 @@ make
 ```
 
 If build successfully, it will generate new 4 grpc and protobuf files (".grpc.pb.cc and .h","pb.cc and .h" )
- and dynamic link libraries lib/pb11_ec.cpython-36m-x86_64-linux-gnu.so and lib/datatrans.cpython-36m-x86_64-linux-gnu.so. Then, you can run EC-Graph
+ and dynamic link libraries lib/pb11_ec.cpython-36m-x86_64-linux-gnu.so and lib/datatrans.cpython-36m-x86_64-linux-gnu.so. Then, you can run ADGNN
  following the instructions in "How to Run an Example"
 
 
