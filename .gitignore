@@ -1,5 +1,8 @@
 /cmake-build-debug/
-/cmake/
+/cmake/build/CMakeFiles
+/cmake/build/core
+/cmake/build/cpptest
+/cmake/build/third_party
 /data_raw/
 /data/
 /venv/
