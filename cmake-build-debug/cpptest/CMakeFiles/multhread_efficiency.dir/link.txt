@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/multhread_efficiency.dir/test_multiple_threads/data_trans_efficiency.cpp.o -o multhread_efficiency  -lpthread 

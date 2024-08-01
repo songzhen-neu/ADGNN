@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/songzhen/workspace/ec-graph/cpptest/test_cpp/random_eff.cpp
+iostream
+-
+cstdlib
+-
+set
+-
+unordered_set
+-
+vector
+-
+

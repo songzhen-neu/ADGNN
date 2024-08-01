@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/songzhen/workspace/ec-graph/cpptest/test_multiple_threads/data_trans_efficiency.cpp
+iostream
+-
+vector
+-
+unordered_map
+-
+

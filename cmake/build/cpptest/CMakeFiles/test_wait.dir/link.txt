@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/test_wait.dir/test_wait.cc.o -o test_wait  -lpthread 

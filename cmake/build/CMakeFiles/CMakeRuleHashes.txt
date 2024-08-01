@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+ca7300c3205f3bef65656acf97dfa62a dgnn_test.pb.cc

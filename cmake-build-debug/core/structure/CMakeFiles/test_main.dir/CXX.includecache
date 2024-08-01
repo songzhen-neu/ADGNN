@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/songzhen/workspace/ec-graph/core/structure/hashset.cpp
+hashset.h
+/home/songzhen/workspace/ec-graph/core/structure/hashset.h
+
+/home/songzhen/workspace/ec-graph/core/structure/hashset.h
+iostream
+-
+
+/home/songzhen/workspace/ec-graph/core/structure/test_main.cpp
+hashset.cpp
+/home/songzhen/workspace/ec-graph/core/structure/hashset.cpp
+

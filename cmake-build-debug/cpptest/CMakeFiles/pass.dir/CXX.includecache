@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/songzhen/workspace/ec-graph/cpptest/test_multiple_threads/address_value_pass.cpp
+iostream
+-
+vector
+-
+unordered_map
+-
+

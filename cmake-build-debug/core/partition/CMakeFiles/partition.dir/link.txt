@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpartition.a CMakeFiles/partition.dir/GeneralPartition.cc.o CMakeFiles/partition.dir/Partitioner.cc.o
+/usr/bin/ranlib libpartition.a

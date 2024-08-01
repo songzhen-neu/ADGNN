@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/songzhen/workspace/ec-graph/core/structure/hashmap.cpp
+hashmap.h
+/home/songzhen/workspace/ec-graph/core/structure/hashmap.h
+
+/home/songzhen/workspace/ec-graph/core/structure/hashmap.h
+iostream
+-
+

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libstruct.a  CMakeFiles/struct.dir/hashset.cpp.o
+/usr/bin/ranlib libstruct.a

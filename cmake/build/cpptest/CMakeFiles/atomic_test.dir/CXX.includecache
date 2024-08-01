@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/songzhen/workspace/ADGNN/cpptest/atomic_test.cpp
+iostream
+-
+atomic
+-
+thread
+-
+pthread.h
+-
+vector
+-
+mutex
+-
+

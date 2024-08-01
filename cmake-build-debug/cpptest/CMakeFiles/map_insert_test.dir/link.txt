@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/map_insert_test.dir/map_insert_test.cc.o -o map_insert_test 

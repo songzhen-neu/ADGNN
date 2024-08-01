@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/math_eff.dir/test_cpp/math_efficiency.cpp.o -o math_eff 

@@ -1,0 +1,1554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="dgnn_test"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\;CMake Files\..\..\..\..\usr\local\lib\cmake\grpc\;CMake Files\..\..\..\..\usr\local\lib\cmake\absl\;CMake Files\third_party\;CMake Files\third_party\pybind11\;CMake Files\third_party\pybind11\tools\;CMake Files\cpptest\;CMake Files\cpptest\test_system\;CMake Files\core\;CMake Files\core\service\;CMake Files\core\store\;CMake Files\core\util\;CMake Files\core\partition\;CMake Files\core\resource\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mainTest">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/mainTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 mainTest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mainTest/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/mainTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 mainTest/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw_grpc_proto">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/libhw_grpc_proto.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw_grpc_proto"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw_grpc_proto/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/libhw_grpc_proto.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw_grpc_proto/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testIterator">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/testIterator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 testIterator"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testIterator/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/testIterator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 testIterator/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="copy_test">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/copy_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 copy_test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="copy_test/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/copy_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 copy_test/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="atomic_test">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/atomic_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 atomic_test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="atomic_test/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/atomic_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 atomic_test/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_vector_init">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_vector_init" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_vector_init"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_vector_init/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_vector_init" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_vector_init/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_mutex">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_mutex" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_mutex"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_mutex/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_mutex" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_mutex/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_wait">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_wait" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_wait"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_wait/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_wait" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_wait/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_matrix_multi">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_matrix_multi" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_matrix_multi"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_matrix_multi/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_matrix_multi" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_matrix_multi/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="staticTest">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/staticTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 staticTest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="staticTest/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/staticTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 staticTest/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="address_or_value">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/address_or_value" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 address_or_value"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="address_or_value/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/address_or_value" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 address_or_value/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pointer_test">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/pointer_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 pointer_test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pointer_test/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/pointer_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 pointer_test/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bittest">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/libbittest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 bittest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bittest/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/libbittest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 bittest/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_condition_variable">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_condition_variable" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_condition_variable"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_condition_variable/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_condition_variable" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_condition_variable/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="array_variable_test">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/array_variable_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 array_variable_test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="array_variable_test/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/array_variable_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 array_variable_test/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="vector_test">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/vector_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 vector_test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="vector_test/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/vector_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 vector_test/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MultiThread">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/MultiThread" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 MultiThread"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MultiThread/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/MultiThread" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 MultiThread/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="get_length">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/get_length" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 get_length"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="get_length/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/get_length" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 get_length/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="map_insert_test">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/map_insert_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 map_insert_test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="map_insert_test/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/map_insert_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 map_insert_test/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_set_embs">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/test_set_embs" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/Makefile&quot;  VERBOSE=1 test_set_embs"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_set_embs/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/test_set_embs" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/Makefile&quot;  VERBOSE=1 test_set_embs/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testSetCtx">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/testSetCtx" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/Makefile&quot;  VERBOSE=1 testSetCtx"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testSetCtx/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/testSetCtx" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/Makefile&quot;  VERBOSE=1 testSetCtx/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/cpptest/test_system/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="service">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/service/libservice.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/service"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/service/Makefile&quot;  VERBOSE=1 service"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/service/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/service/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/service/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="service/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/service/libservice.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/service"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/service/Makefile&quot;  VERBOSE=1 service/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/service/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/service/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/service/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="store">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/store/libstore.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/store"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/store/Makefile&quot;  VERBOSE=1 store"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/store/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/store/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/store/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="store/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/store/libstore.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/store"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/store/Makefile&quot;  VERBOSE=1 store/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/store/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/store/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/store/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="util">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/util/libutil.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/util"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/util/Makefile&quot;  VERBOSE=1 util"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/util/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="util/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/util/libutil.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/util"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/util/Makefile&quot;  VERBOSE=1 util/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/util/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="partition">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/partition/libpartition.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/partition"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/partition/Makefile&quot;  VERBOSE=1 partition"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/partition/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/partition/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/partition/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="partition/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/partition/libpartition.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/partition"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/partition/Makefile&quot;  VERBOSE=1 partition/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/partition/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/partition/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/partition/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pb11_ec">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/lib/pb11_ec.cpython-36m-x86_64-linux-gnu.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/resource"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/resource/Makefile&quot;  VERBOSE=1 pb11_ec"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/resource/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/resource/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/resource/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pb11_ec/fast">
+				<Option output="/home/songzhen/workspace/ec-graph/cmake-build-debug/lib/pb11_ec.cpython-36m-x86_64-linux-gnu.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ec-graph/cmake-build-debug/core/resource"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/cmake-build-debug"/>
+					<Add directory="/usr/include/python3.6m"/>
+					<Add directory="/home/songzhen/workspace/ec-graph/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/resource/Makefile&quot;  VERBOSE=1 pb11_ec/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/resource/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/resource/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ec-graph/cmake-build-debug/core/resource/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cmake-build-debug/dgnn_test.grpc.pb.cc">
+			<Option target="hw_grpc_proto"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cmake-build-debug/dgnn_test.grpc.pb.h">
+			<Option target="hw_grpc_proto"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cmake-build-debug/dgnn_test.pb.cc">
+			<Option target="hw_grpc_proto"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cmake-build-debug/dgnn_test.pb.cc.rule">
+			<Option target="hw_grpc_proto"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cmake-build-debug/dgnn_test.pb.h">
+			<Option target="hw_grpc_proto"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/partition/GeneralPartition.cc">
+			<Option target="partition"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/partition/GeneralPartition.h">
+			<Option target="partition"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/partition/Partitioner.cc">
+			<Option target="partition"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/partition/Partitioner.h">
+			<Option target="partition"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/resource/pb11_ec.cc">
+			<Option target="pb11_ec"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/service/dgnn_client.cc">
+			<Option target="service"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/service/dgnn_client.h">
+			<Option target="service"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/service/dgnn_server.cc">
+			<Option target="service"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/service/dgnn_server.h">
+			<Option target="service"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/service/router.cc">
+			<Option target="service"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/service/router.h">
+			<Option target="service"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/store/ServerStore.cc">
+			<Option target="store"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/store/ServerStore.h">
+			<Option target="store"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/store/WorkerStore.cc">
+			<Option target="store"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/store/WorkerStore.h">
+			<Option target="store"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/util/Length.cc">
+			<Option target="util"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/util/check.cc">
+			<Option target="util"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/util/check.h">
+			<Option target="util"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/util/string_split.cc">
+			<Option target="util"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/util/string_split.h">
+			<Option target="util"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/util/threadUtil.cc">
+			<Option target="util"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/util/threadUtil.h">
+			<Option target="util"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/MultiThread.cc">
+			<Option target="MultiThread"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/address_or_value.cc">
+			<Option target="address_or_value"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/array_variable_test.cc">
+			<Option target="array_variable_test"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/atomic_test.cpp">
+			<Option target="atomic_test"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/copy_test.cpp">
+			<Option target="copy_test"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/get_length.cc">
+			<Option target="get_length"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/map_insert_test.cc">
+			<Option target="map_insert_test"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/pointer_test.cc">
+			<Option target="pointer_test"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/staticTest.cc">
+			<Option target="staticTest"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/testIterator.cpp">
+			<Option target="testIterator"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/testVectorInit.cpp">
+			<Option target="test_vector_init"/>
+			<Option target="bittest"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/test_condition_variable.cc">
+			<Option target="test_condition_variable"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/test_matrix_multi.cc">
+			<Option target="test_matrix_multi"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/test_mutex.cc">
+			<Option target="test_mutex"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/test_system/testSetCtx.cc">
+			<Option target="testSetCtx"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/test_system/test_set_embs.cc">
+			<Option target="test_set_embs"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/test_wait.cc">
+			<Option target="test_wait"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/vector_test.cc">
+			<Option target="vector_test"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/main.cc">
+			<Option target="mainTest"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/../../../../usr/local/lib/cmake/protobuf/protobuf-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/../../../../usr/local/lib/cmake/protobuf/protobuf-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/../../../../usr/local/lib/cmake/protobuf/protobuf-module.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/../../../../usr/local/lib/cmake/protobuf/protobuf-options.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/../../../../usr/local/lib/cmake/protobuf/protobuf-targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/../../../../usr/local/lib/cmake/protobuf/protobuf-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/../../../../usr/local/lib/cmake/grpc/gRPCConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\grpc\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/../../../../usr/local/lib/cmake/grpc/gRPCConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\grpc\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/../../../../usr/local/lib/cmake/grpc/gRPCTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\grpc\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/../../../../usr/local/lib/cmake/grpc/gRPCTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\grpc\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/../../../../usr/local/lib/cmake/absl/abslConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\absl\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/../../../../usr/local/lib/cmake/absl/abslConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\absl\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/../../../../usr/local/lib/cmake/absl/abslTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\absl\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/../../../../usr/local/lib/cmake/absl/abslTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\absl\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/third_party/pybind11/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\third_party\pybind11\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/third_party/pybind11/tools/FindPythonLibsNew.cmake">
+			<Option virtualFolder="CMake Files\third_party\pybind11\tools\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/third_party/pybind11/tools/pybind11Common.cmake">
+			<Option virtualFolder="CMake Files\third_party\pybind11\tools\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/third_party/pybind11/tools/pybind11Tools.cmake">
+			<Option virtualFolder="CMake Files\third_party\pybind11\tools\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\cpptest\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/cpptest/test_system/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\cpptest\test_system\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/service/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\service\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/store/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\store\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/util/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\util\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/partition/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\partition\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ec-graph/core/resource/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\resource\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

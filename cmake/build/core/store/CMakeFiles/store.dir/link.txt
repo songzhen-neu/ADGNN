@@ -1,0 +1,2 @@
+/usr/bin/ar qc libstore.a CMakeFiles/store.dir/ServerStore.cc.o CMakeFiles/store.dir/WorkerStore.cc.o
+/usr/bin/ranlib libstore.a

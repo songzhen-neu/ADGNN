@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/atomic_test.dir/atomic_test.cpp.o -o atomic_test  -lpthread 

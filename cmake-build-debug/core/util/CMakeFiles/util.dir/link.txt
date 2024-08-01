@@ -1,0 +1,2 @@
+/usr/bin/ar qc libutil.a CMakeFiles/util.dir/Length.cc.o CMakeFiles/util.dir/SetVecTrans.cpp.o CMakeFiles/util.dir/check.cc.o CMakeFiles/util.dir/string_split.cc.o CMakeFiles/util.dir/threadUtil.cc.o
+/usr/bin/ranlib libutil.a

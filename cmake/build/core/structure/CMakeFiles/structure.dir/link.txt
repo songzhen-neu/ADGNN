@@ -1,0 +1,2 @@
+/usr/bin/ar qc libstructure.a CMakeFiles/structure.dir/Graph.cpp.o CMakeFiles/structure.dir/GraphLayer.cpp.o CMakeFiles/structure.dir/SubGraph.cpp.o CMakeFiles/structure.dir/hashmap.cpp.o CMakeFiles/structure.dir/hashset.cpp.o
+/usr/bin/ranlib libstructure.a

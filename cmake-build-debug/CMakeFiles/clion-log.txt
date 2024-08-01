@@ -1,0 +1,13 @@
+/home/songzhen/Documents/CLion-2020.2.3/clion-2020.2.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/songzhen/workspace/ADGNN
+-- Using protobuf 3.19.4.0
+-- Using gRPC 1.45.0-dev
+-- pybind11 v2.6.0 dev
+-- hw_proto: /home/songzhen/workspace/ADGNN/core/protos/dgnn_test.proto
+-- hw_proto_path: /home/songzhen/workspace/ADGNN/core/protos
+-- CURRENT BINARY PATH: /home/songzhen/workspace/ADGNN/cmake-build-debug
+-- proto_src /home/songzhen/workspace/ADGNN/cmake-build-debug/dgnn_test.pb.cc
+-- /home/songzhen/workspace/ADGNN/cmake-build-debug
+-- structure: ./Graph.cpp;./GraphLayer.cpp;./SubGraph.cpp;./hashmap.cpp;./hashset.cpp
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/songzhen/workspace/ADGNN/cmake-build-debug

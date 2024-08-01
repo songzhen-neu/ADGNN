@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/songzhen/workspace/ADGNN/core/util/Length.cc
+
+/home/songzhen/workspace/ADGNN/cpptest/get_length.cc
+iostream
+-
+../core/util/Length.cc
+/home/songzhen/workspace/ADGNN/core/util/Length.cc
+

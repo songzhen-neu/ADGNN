@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdata_preprocess.a CMakeFiles/data_preprocess.dir/partition_graph.cpp.o
+/usr/bin/ranlib libdata_preprocess.a

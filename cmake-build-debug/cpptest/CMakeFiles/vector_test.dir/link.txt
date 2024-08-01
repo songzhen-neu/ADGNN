@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/vector_test.dir/vector_test.cc.o -o vector_test 

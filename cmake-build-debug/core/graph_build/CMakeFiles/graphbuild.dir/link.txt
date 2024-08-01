@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgraphbuild.a CMakeFiles/graphbuild.dir/GraphBuild.cpp.o
+/usr/bin/ranlib libgraphbuild.a

@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/songzhen/workspace/ec-graph/core/data_preprocess/partition_graph.cpp
+iostream
+-
+zconf.h
+-
+map
+-
+set
+-
+fstream
+-
+vector
+-
+string
+-
+../util/string_split.h
+/home/songzhen/workspace/ec-graph/core/util/string_split.h
+unordered_set
+-
+sys/stat.h
+-
+
+/home/songzhen/workspace/ec-graph/core/util/string_split.h
+iostream
+-
+vector
+-
+

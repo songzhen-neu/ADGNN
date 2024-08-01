@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g -shared  -o ../lib/datatrans.cpython-39-x86_64-linux-gnu.so CMakeFiles/datatrans.dir/test_pybind/DataTrans.cpp.o 

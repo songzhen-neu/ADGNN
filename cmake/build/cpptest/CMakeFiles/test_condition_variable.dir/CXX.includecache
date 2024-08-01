@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/songzhen/workspace/ADGNN/cpptest/test_condition_variable.cc
+iostream
+-
+thread
+-
+mutex
+-
+condition_variable
+-
+pthread.h
+-
+unistd.h
+-
+

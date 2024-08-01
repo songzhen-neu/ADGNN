@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="pybind11"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\;CMake Files\..\..\..\..\usr\local\lib\cmake\grpc\;CMake Files\..\..\..\..\usr\local\lib\cmake\absl\;CMake Files\third_party\;CMake Files\third_party\pybind11\;CMake Files\third_party\pybind11\tools\;CMake Files\cpptest\;CMake Files\core\;CMake Files\core\service\;CMake Files\core\store\;CMake Files\core\util\;CMake Files\core\partition\;CMake Files\core\resource\;CMake Files\core\structure\;CMake Files\core\data_preprocess\;CMake Files\core\graph_build\;CMake Files\core\sample\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/third_party/pybind11"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/third_party/pybind11/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/third_party/pybind11/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/third_party/pybind11/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/third_party/pybind11/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/songzhen/workspace/ADGNN/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/protobuf/protobuf-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/protobuf/protobuf-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/protobuf/protobuf-module.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/protobuf/protobuf-options.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/protobuf/protobuf-targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/protobuf/protobuf-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/grpc/gRPCConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\grpc\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/grpc/gRPCConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\grpc\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/grpc/gRPCTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\grpc\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/grpc/gRPCTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\grpc\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/absl/abslConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\absl\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/absl/abslConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\absl\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/absl/abslTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\absl\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/absl/abslTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\absl\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/third_party/pybind11/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\third_party\pybind11\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/third_party/pybind11/tools/pybind11Common.cmake">
+			<Option virtualFolder="CMake Files\third_party\pybind11\tools\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/third_party/pybind11/tools/pybind11NewTools.cmake">
+			<Option virtualFolder="CMake Files\third_party\pybind11\tools\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\cpptest\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/service/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\service\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/store/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\store\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/util/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\util\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/partition/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\partition\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/resource/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\resource\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/structure/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\structure\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/data_preprocess/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\data_preprocess\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/graph_build/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\graph_build\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/sample/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\sample\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

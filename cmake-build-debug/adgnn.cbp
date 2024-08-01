@@ -1,0 +1,2350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="adgnn"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\;CMake Files\..\..\..\..\usr\local\lib\cmake\grpc\;CMake Files\..\..\..\..\usr\local\lib\cmake\absl\;CMake Files\third_party\;CMake Files\third_party\pybind11\;CMake Files\third_party\pybind11\tools\;CMake Files\cpptest\;CMake Files\core\;CMake Files\core\service\;CMake Files\core\store\;CMake Files\core\util\;CMake Files\core\partition\;CMake Files\core\resource\;CMake Files\core\structure\;CMake Files\core\data_preprocess\;CMake Files\core\graph_build\;CMake Files\core\sample\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw_grpc_proto">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/libhw_grpc_proto.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw_grpc_proto"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw_grpc_proto/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/libhw_grpc_proto.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw_grpc_proto/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mainTest">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/mainTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 mainTest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mainTest/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/mainTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 mainTest/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cpptest">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/lib/libcpptest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 cpptest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cpptest/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/lib/libcpptest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 cpptest/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pointer_test">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/pointer_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 pointer_test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pointer_test/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/pointer_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 pointer_test/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="address_or_value">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/address_or_value" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 address_or_value"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="address_or_value/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/address_or_value" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 address_or_value/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="vector_point_efficiency">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/vector_point_efficiency" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 vector_point_efficiency"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="vector_point_efficiency/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/vector_point_efficiency" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 vector_point_efficiency/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fundamental_test">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/fundamental_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 fundamental_test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fundamental_test/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/fundamental_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 fundamental_test/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bug">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/bug" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 bug"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bug/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/bug" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 bug/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="random">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/random" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 random"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="random/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/random" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 random/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="random_eff">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/random_eff" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 random_eff"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="random_eff/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/random_eff" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 random_eff/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="set_efficiency">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/set_efficiency" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 set_efficiency"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="set_efficiency/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/set_efficiency" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 set_efficiency/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="get_length">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/get_length" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 get_length"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="get_length/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/get_length" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 get_length/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="array_variable_test">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/array_variable_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 array_variable_test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="array_variable_test/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/array_variable_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 array_variable_test/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="vector_test">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/vector_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 vector_test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="vector_test/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/vector_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 vector_test/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="map_insert_test">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/map_insert_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 map_insert_test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="map_insert_test/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/map_insert_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 map_insert_test/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MultiThread">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/MultiThread" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 MultiThread"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MultiThread/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/MultiThread" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 MultiThread/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="staticTest">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/staticTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 staticTest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="staticTest/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/staticTest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 staticTest/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_condition_variable">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/test_condition_variable" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_condition_variable"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_condition_variable/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/test_condition_variable" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_condition_variable/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_wait">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/test_wait" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_wait"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_wait/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/test_wait" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_wait/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_matrix_multi">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/test_matrix_multi" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_matrix_multi"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_matrix_multi/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/test_matrix_multi" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_matrix_multi/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_vector_init">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/test_vector_init" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_vector_init"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_vector_init/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/test_vector_init" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_vector_init/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="atomic_test">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/atomic_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 atomic_test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="atomic_test/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/atomic_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 atomic_test/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testIterator">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/testIterator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 testIterator"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="testIterator/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/testIterator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 testIterator/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="copy_test">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/copy_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 copy_test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="copy_test/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/copy_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 copy_test/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_mutex">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/test_mutex" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_mutex"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_mutex/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/test_mutex" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 test_mutex/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="multhread_efficiency">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/multhread_efficiency" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 multhread_efficiency"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="multhread_efficiency/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/multhread_efficiency" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 multhread_efficiency/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pass">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/pass" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 pass"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pass/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/pass" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 pass/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="math_eff">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/math_eff" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 math_eff"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="math_eff/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/math_eff" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 math_eff/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hashset_test">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/hashset_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 hashset_test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hashset_test/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/hashset_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 hashset_test/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="datatrans">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/lib/datatrans.cpython-39-x86_64-linux-gnu.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 datatrans"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="datatrans/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/lib/datatrans.cpython-39-x86_64-linux-gnu.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 datatrans/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/cpptest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="service">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/service/libservice.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/service"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/service/Makefile&quot;  VERBOSE=1 service"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/service/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/service/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/service/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="service/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/service/libservice.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/service"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/service/Makefile&quot;  VERBOSE=1 service/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/service/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/service/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/service/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="store">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/store/libstore.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/store"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/store/Makefile&quot;  VERBOSE=1 store"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/store/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/store/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/store/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="store/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/store/libstore.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/store"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/store/Makefile&quot;  VERBOSE=1 store/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/store/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/store/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/store/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="util">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/util/libutil.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/util"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/util/Makefile&quot;  VERBOSE=1 util"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/util/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="util/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/util/libutil.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/util"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/util/Makefile&quot;  VERBOSE=1 util/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/util/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="partition">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/partition/libpartition.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/partition"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/partition/Makefile&quot;  VERBOSE=1 partition"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/partition/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/partition/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/partition/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="partition/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/partition/libpartition.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/partition"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/partition/Makefile&quot;  VERBOSE=1 partition/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/partition/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/partition/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/partition/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pb11_ec">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/lib/pb11_ec.cpython-39-x86_64-linux-gnu.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/resource"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/resource/Makefile&quot;  VERBOSE=1 pb11_ec"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/resource/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/resource/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/resource/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pb11_ec/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/lib/pb11_ec.cpython-39-x86_64-linux-gnu.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/resource"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/resource/Makefile&quot;  VERBOSE=1 pb11_ec/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/resource/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/resource/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/resource/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="structure">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/structure/libstructure.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/structure"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/structure/Makefile&quot;  VERBOSE=1 structure"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/structure/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/structure/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/structure/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="structure/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/structure/libstructure.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/structure"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/structure/Makefile&quot;  VERBOSE=1 structure/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/structure/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/structure/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/structure/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="data_preprocess">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/libdata_preprocess.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/Makefile&quot;  VERBOSE=1 data_preprocess"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="data_preprocess/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/libdata_preprocess.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/Makefile&quot;  VERBOSE=1 data_preprocess/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="partition_graph">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/partition_graph" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/Makefile&quot;  VERBOSE=1 partition_graph"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="partition_graph/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/partition_graph" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/Makefile&quot;  VERBOSE=1 partition_graph/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/data_preprocess/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="graphbuild">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/graph_build/libgraphbuild.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/graph_build"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/graph_build/Makefile&quot;  VERBOSE=1 graphbuild"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/graph_build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/graph_build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/graph_build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="graphbuild/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/graph_build/libgraphbuild.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/graph_build"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/graph_build/Makefile&quot;  VERBOSE=1 graphbuild/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/graph_build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/graph_build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/graph_build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sample">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/sample/libsample.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/sample"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/sample/Makefile&quot;  VERBOSE=1 sample"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/sample/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/sample/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/sample/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sample/fast">
+				<Option output="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/sample/libsample.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/songzhen/workspace/ADGNN/cmake-build-debug/core/sample"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DCARES_STATICLIB"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/cmake-build-debug"/>
+					<Add directory="/home/songzhen/anaconda3/include/python3.9"/>
+					<Add directory="/home/songzhen/workspace/ADGNN/third_party/pybind11/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/sample/Makefile&quot;  VERBOSE=1 sample/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/sample/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/sample/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/songzhen/workspace/ADGNN/cmake-build-debug/core/sample/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cmake-build-debug/dgnn_test.grpc.pb.cc">
+			<Option target="hw_grpc_proto"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cmake-build-debug/dgnn_test.grpc.pb.h">
+			<Option target="hw_grpc_proto"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cmake-build-debug/dgnn_test.pb.cc">
+			<Option target="hw_grpc_proto"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cmake-build-debug/dgnn_test.pb.cc.rule">
+			<Option target="hw_grpc_proto"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cmake-build-debug/dgnn_test.pb.h">
+			<Option target="hw_grpc_proto"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/data_preprocess/partition_graph.cpp">
+			<Option target="data_preprocess"/>
+			<Option target="partition_graph"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/graph_build/GraphBuild.cpp">
+			<Option target="graphbuild"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/graph_build/GraphBuild.h">
+			<Option target="graphbuild"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/partition/GeneralPartition.cc">
+			<Option target="partition"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/partition/GeneralPartition.h">
+			<Option target="partition"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/partition/Partitioner.cc">
+			<Option target="partition"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/partition/Partitioner.h">
+			<Option target="partition"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/resource/pb11_ec.cc">
+			<Option target="pb11_ec"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/sample/Sample.cpp">
+			<Option target="sample"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/sample/Sample.h">
+			<Option target="sample"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/service/dgnn_client.cc">
+			<Option target="service"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/service/dgnn_client.h">
+			<Option target="service"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/service/dgnn_server.cc">
+			<Option target="service"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/service/dgnn_server.h">
+			<Option target="service"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/service/router.cc">
+			<Option target="service"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/service/router.h">
+			<Option target="service"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/store/ServerStore.cc">
+			<Option target="store"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/store/ServerStore.h">
+			<Option target="store"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/store/WorkerStore.cc">
+			<Option target="store"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/store/WorkerStore.h">
+			<Option target="store"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/structure/Graph.cpp">
+			<Option target="structure"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/structure/Graph.h">
+			<Option target="structure"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/structure/GraphLayer.cpp">
+			<Option target="structure"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/structure/GraphLayer.h">
+			<Option target="structure"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/structure/SubGraph.cpp">
+			<Option target="structure"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/structure/SubGraph.h">
+			<Option target="structure"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/structure/hashmap.cpp">
+			<Option target="structure"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/structure/hashmap.h">
+			<Option target="structure"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/structure/hashset.cpp">
+			<Option target="structure"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/structure/hashset.h">
+			<Option target="structure"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/util/Length.cc">
+			<Option target="util"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/util/SetVecTrans.cpp">
+			<Option target="util"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/util/SetVecTrans.h">
+			<Option target="util"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/util/check.cc">
+			<Option target="util"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/util/check.h">
+			<Option target="util"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/util/string_split.cc">
+			<Option target="util"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/util/string_split.h">
+			<Option target="util"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/util/threadUtil.cc">
+			<Option target="util"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/util/threadUtil.h">
+			<Option target="util"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/Animal.cc">
+			<Option target="cpptest"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/MultiThread.cc">
+			<Option target="cpptest"/>
+			<Option target="MultiThread"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/address_or_value.cc">
+			<Option target="cpptest"/>
+			<Option target="address_or_value"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/array_variable_test.cc">
+			<Option target="cpptest"/>
+			<Option target="array_variable_test"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/atomic_test.cpp">
+			<Option target="cpptest"/>
+			<Option target="atomic_test"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/bittest.cc">
+			<Option target="cpptest"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/bittest.h">
+			<Option target="cpptest"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/copy_test.cpp">
+			<Option target="cpptest"/>
+			<Option target="copy_test"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/get_length.cc">
+			<Option target="cpptest"/>
+			<Option target="get_length"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/map_insert_test.cc">
+			<Option target="cpptest"/>
+			<Option target="map_insert_test"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/pointer_test.cc">
+			<Option target="cpptest"/>
+			<Option target="pointer_test"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/startMaster.cc">
+			<Option target="cpptest"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/staticTest.cc">
+			<Option target="cpptest"/>
+			<Option target="staticTest"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/testIterator.cpp">
+			<Option target="cpptest"/>
+			<Option target="testIterator"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/testVectorInit.cpp">
+			<Option target="cpptest"/>
+			<Option target="test_vector_init"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/test_condition_variable.cc">
+			<Option target="cpptest"/>
+			<Option target="test_condition_variable"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/test_cpp/bug.cpp">
+			<Option target="bug"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/test_cpp/fundamental_test.cpp">
+			<Option target="fundamental_test"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/test_cpp/hashset_test.cpp">
+			<Option target="hashset_test"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/test_cpp/math_efficiency.cpp">
+			<Option target="math_eff"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/test_cpp/random.cpp">
+			<Option target="random"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/test_cpp/random_eff.cpp">
+			<Option target="random_eff"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/test_cpp/set_efficiency.cpp">
+			<Option target="set_efficiency"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/test_cpp/vector_point_efficiency.cpp">
+			<Option target="vector_point_efficiency"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/test_matrix_multi.cc">
+			<Option target="cpptest"/>
+			<Option target="test_matrix_multi"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/test_multiple_threads/address_value_pass.cpp">
+			<Option target="pass"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/test_multiple_threads/data_trans_efficiency.cpp">
+			<Option target="multhread_efficiency"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/test_mutex.cc">
+			<Option target="cpptest"/>
+			<Option target="test_mutex"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/test_pybind/DataTrans.cpp">
+			<Option target="datatrans"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/test_wait.cc">
+			<Option target="cpptest"/>
+			<Option target="test_wait"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/vector_test.cc">
+			<Option target="cpptest"/>
+			<Option target="vector_test"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/main.cc">
+			<Option target="mainTest"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/protobuf/protobuf-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/protobuf/protobuf-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/protobuf/protobuf-module.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/protobuf/protobuf-options.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/protobuf/protobuf-targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/protobuf/protobuf-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\protobuf\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/grpc/gRPCConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\grpc\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/grpc/gRPCConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\grpc\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/grpc/gRPCTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\grpc\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/grpc/gRPCTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\grpc\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/absl/abslConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\absl\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/absl/abslConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\absl\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/absl/abslTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\absl\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/../../../../usr/local/lib/cmake/absl/abslTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\absl\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/third_party/pybind11/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\third_party\pybind11\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/third_party/pybind11/tools/pybind11Common.cmake">
+			<Option virtualFolder="CMake Files\third_party\pybind11\tools\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/third_party/pybind11/tools/pybind11NewTools.cmake">
+			<Option virtualFolder="CMake Files\third_party\pybind11\tools\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/cpptest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\cpptest\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/service/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\service\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/store/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\store\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/util/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\util\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/partition/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\partition\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/resource/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\resource\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/structure/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\structure\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/data_preprocess/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\data_preprocess\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/graph_build/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\graph_build\"/>
+		</Unit>
+		<Unit filename="/home/songzhen/workspace/ADGNN/core/sample/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\core\sample\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

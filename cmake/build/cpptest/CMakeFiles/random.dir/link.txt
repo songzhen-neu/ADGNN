@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/random.dir/test_cpp/random.cpp.o -o random 

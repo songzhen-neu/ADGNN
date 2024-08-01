@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbittest.a CMakeFiles/bittest.dir/bittest.o
+/usr/bin/ranlib libbittest.a

@@ -1,0 +1,64 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N801" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="cmake.build.example2" />
+          <option value="cmake.build.example" />
+          <option value="test.pybind11_test2.example2" />
+          <option value="test.pybind11_test2.Animal" />
+          <option value="test.pybind11_test2.call_go" />
+          <option value="test.pybind11_test2.Dog" />
+          <option value="test.pybind11_test2.run_server" />
+          <option value="test.pybind11_test2.DGNNClient" />
+          <option value="test.pybind11_test2.RandomPartition" />
+          <option value="test.pybind11_test2.RandomPartitioner" />
+          <option value="dist_gnn.run_server" />
+          <option value="dist_gnn.DGNNClient" />
+          <option value="dist_gnn.RandomPartitioner" />
+          <option value="dist.dist_gnn.RandomPartitioner" />
+          <option value="dist.dist_gnn.run_server" />
+          <option value="dist.dist_gnn.DGNNClient" />
+          <option value="dist_gcn.dist_start.run_server" />
+          <option value="dist_gcn.dist_start.DGNNClient" />
+          <option value="dist_gcn.dist_start.RandomPartitioner" />
+          <option value="dist_gcn.dist_start.dgnnClients" />
+          <option value="dist_gcn.dist_start.DGNNServer" />
+          <option value="dist_gcn.dist_start.ServiceImpl" />
+          <option value="single_gcn.dist_start.DGNNClient" />
+          <option value="single_gcn.dist_start.ServiceImpl" />
+          <option value="single_gcn.train.DGNNClient" />
+          <option value="single_gcn.train.ServiceImpl" />
+          <option value="dist_gcn.layers.example2" />
+          <option value="dist_gcn.dist_start.Router" />
+          <option value="dist_gcn.layers.set_embs" />
+          <option value="graphsage.model.ServiceImpl" />
+          <option value="graphsage.model.DGNNClient" />
+          <option value="graphsage.model.Router" />
+          <option value="dist_sage.dist_start.ServiceImpl" />
+          <option value="dist_sage.dist_start.DGNNClient" />
+          <option value="dist_sage.dist_start.Router" />
+          <option value="dist_sage.layers.set_embs" />
+          <option value="sklearn.metrics.*" />
+          <option value="torch.*" />
+          <option value="dist_gat.dist_start.ServiceImpl" />
+          <option value="dist_gat.dist_start.DGNNClient" />
+          <option value="dist_gat.dist_start.Router" />
+          <option value="context.context.DGNNClient" />
+          <option value="context.context.Router" />
+          <option value="cmake.build.lib.pb11_ec" />
+          <option value="ecgraph.distributed.engine.ServiceImpl" />
+          <option value="cmake.build.lib.datatrans" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

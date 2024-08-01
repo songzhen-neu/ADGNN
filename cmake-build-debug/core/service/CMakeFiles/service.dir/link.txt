@@ -1,0 +1,2 @@
+/usr/bin/ar qc libservice.a CMakeFiles/service.dir/dgnn_client.cc.o CMakeFiles/service.dir/dgnn_server.cc.o CMakeFiles/service.dir/router.cc.o
+/usr/bin/ranlib libservice.a
