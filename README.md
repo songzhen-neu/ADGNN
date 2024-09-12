@@ -78,7 +78,7 @@ The other settings are shown at the beginning "argument list".
 ## Citation
 Please cite the follow work if it helps you.
 
-``
+```
 @article{song2023adgnn,
   title={ADGNN: Towards Scalable GNN Training with Aggregation-Difference Aware Sampling},
   author={Song, Zhen and Gu, Yu and Li, Tianyi and Sun, Qing and Zhang, Yanfeng and Jensen, Christian S and Yu, Ge},
